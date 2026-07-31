@@ -106,6 +106,9 @@ export default function RootLayout({
       className={`scroll-smooth ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         {/* Preload hero avatar to eliminate LCP delay on mobile */}
         <link
           rel="preload"
