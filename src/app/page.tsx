@@ -204,6 +204,7 @@ export default function Home() {
                         fill
                         priority
                         loading="eager"
+                        fetchPriority="high"
                         sizes="64px"
                         className="object-cover"
                       />
