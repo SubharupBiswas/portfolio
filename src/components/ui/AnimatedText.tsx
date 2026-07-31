@@ -17,36 +17,20 @@ export function AnimatedText({
   className = '',
 }: AnimatedTextProps) {
   const [index, setIndex] = useState(0);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted || !texts || texts.length === 0) return;
+    if (!texts || texts.length === 0) return;
     const timer = setInterval(() => {
       setIndex((i: number) => (i + 1) % texts.length);
     }, interval);
     return () => clearInterval(timer);
-  }, [mounted, texts, interval]);
+  }, [texts, interval]);
 
   if (!texts || texts.length === 0) return null;
 
   return (
-    <span className={`inline-flex items-center min-h-[2.5rem] relative overflow-hidden align-middle ${className}`} aria-live="polite">
-      <AnimatePresence mode="wait">
-        <motion.span
-          key={mounted ? index : 'ssr'}
-          initial={mounted ? { opacity: 0, y: 12, filter: 'blur(4px)' } : false}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          exit={{ opacity: 0, y: -12, filter: 'blur(4px)' }}
-          transition={{ duration: 0.35, ease: EASE_CUSTOM }}
-          className="inline-block whitespace-nowrap leading-tight"
-        >
-          {texts[index]}
-        </motion.span>
-      </AnimatePresence>
+    <span className={`inline-block text-sky-600 dark:text-sky-400 font-bold ${className}`} aria-live="polite">
+      {texts[index]}
     </span>
   );
 }
