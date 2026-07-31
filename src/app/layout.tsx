@@ -99,7 +99,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      data-scroll-behavior="smooth"
+      className={`scroll-smooth ${inter.variable} ${jetbrainsMono.variable}`}
+    >
       <body className="font-sans antialiased bg-slate-50 dark:bg-zinc-950 text-slate-900 dark:text-zinc-100 min-h-dvh flex flex-col overflow-x-hidden transition-colors duration-300">
         <GoogleAnalytics GA_MEASUREMENT_ID="G-MWH662KTSF" />
         <script

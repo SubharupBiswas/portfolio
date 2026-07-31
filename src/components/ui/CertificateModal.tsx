@@ -10,6 +10,7 @@ import {
   FileText,
   Hash,
   Shield,
+  ShieldCheck,
   X,
 } from 'lucide-react';
 import type { Certificate } from '@/types/portfolio';
@@ -42,7 +43,7 @@ export function CertificateModal({ certificate, onClose }: CertificateModalProps
   }, [certificate]);
 
   const docAsset = certificate?.documentPath || certificate?.localAssetUrl;
-  const isImageDoc = certificate?.imageUrl || (docAsset && (docAsset.endsWith('.png') || docAsset.endsWith('.jpg') || docAsset.endsWith('.jpeg')));
+  const isImageDoc = certificate?.imageUrl || (docAsset && (docAsset.endsWith('.png') || docAsset.endsWith('.jpg') || docAsset.endsWith('.jpeg') || docAsset.endsWith('.svg')));
 
   return (
     <AnimatePresence>
@@ -80,25 +81,28 @@ export function CertificateModal({ certificate, onClose }: CertificateModalProps
             </button>
 
             {/* Certificate Hero Preview Box */}
-            <div className="relative w-full h-48 sm:h-56 overflow-hidden bg-slate-900/90 border-b border-slate-800 flex items-center justify-center p-4">
+            <div className="relative w-full h-48 sm:h-56 rounded-t-2xl overflow-hidden bg-slate-900 border-b border-slate-800 flex flex-col items-center justify-center p-6 text-center group">
               {isImageDoc ? (
                 <Image
                   alt={certificate.title}
-                  className="object-contain p-2"
+                  className="object-contain p-4"
                   fill
                   sizes="(max-width: 640px) 100vw, 480px"
                   src={certificate.imageUrl || docAsset!}
                 />
-              ) : docAsset ? (
-                <iframe
-                  src={`${docAsset}#toolbar=0&navpanes=0&scrollbar=0`}
-                  title={certificate.title}
-                  className="w-full h-full rounded-lg border-0 pointer-events-none"
-                />
               ) : (
-                <div className="flex flex-col items-center gap-2 text-sky-400">
-                  <Award className="w-10 h-10" />
-                  <span className="text-xs font-mono text-slate-400">Verified Credential</span>
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-14 h-14 rounded-2xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 group-hover:scale-110 transition-transform duration-300">
+                    <ShieldCheck className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono uppercase tracking-widest text-sky-400 font-semibold block mb-1">
+                      {certificate.issuer}
+                    </span>
+                    <h4 className="text-sm font-bold text-white max-w-xs line-clamp-1">
+                      {certificate.title}
+                    </h4>
+                  </div>
                 </div>
               )}
             </div>
