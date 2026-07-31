@@ -13,6 +13,7 @@ import {
   MessageSquare,
   X,
 } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
@@ -51,15 +52,19 @@ export function Header() {
         <div className="section-container">
           <nav className="flex items-center justify-between h-16 sm:h-18">
             {/* Logo */}
-            <Link
-              href="/"
-              className="flex items-center gap-2.5 group cursor-pointer"
-            >
-              <div className="w-8 h-8 rounded-xl bg-sky-600 dark:bg-sky-500 flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform duration-300">
-                <span className="font-mono font-bold text-sm text-white">S</span>
+            <Link className="flex items-center gap-2.5 group cursor-pointer" href="/">
+              <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden ring-2 ring-sky-500/30 group-hover:ring-sky-500 transition-all duration-300 shrink-0">
+                <Image
+                  alt="Subharup Biswas Emblem"
+                  className="object-cover"
+                  fill
+                  priority
+                  sizes="36px"
+                  src="/favicon.png"
+                />
               </div>
-              <span className="font-bold text-slate-900 dark:text-zinc-100 text-sm sm:text-base group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors duration-200">
-                Subharup.com
+              <span className="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white tracking-tight group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                subharup<span className="text-sky-600 dark:text-sky-400">.com</span>
               </span>
             </Link>
 

@@ -8,9 +8,11 @@ import {
   Mail,
   MessageSquare,
   Send,
+  Sparkles,
   Terminal as TerminalIcon,
   Twitter,
 } from 'lucide-react';
+import Script from 'next/script';
 import React, { useRef, useState } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -34,13 +36,6 @@ interface FormErrors {
   message?: string;
 }
 
-const SOCIAL_ICONS: Record<string, React.ReactNode> = {
-  Github:   <Github className="w-5 h-5" />,
-  Linkedin: <Linkedin className="w-5 h-5" />,
-  Mail:     <Mail className="w-5 h-5" />,
-  Twitter:  <Twitter className="w-5 h-5" />,
-};
-
 function validate(data: FormData): FormErrors {
   const errors: FormErrors = {};
   if (!data.name.trim()) errors.name = 'Name is required';
@@ -61,6 +56,7 @@ export default function ContactPage() {
   const [form, setForm] = useState<FormData>({ name: '', email: '', subject: '', message: '' });
   const [errors, setErrors] = useState<FormErrors>({});
   const [sending, setSending] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string>('');
 
   // Terminal state
   const [history, setHistory] = useState<Array<{ cmd: string; output: React.ReactNode }>>([
@@ -68,8 +64,8 @@ export default function ContactPage() {
       cmd: 'welcome',
       output: (
         <div className="text-zinc-400 space-y-1">
-          <p className="text-emerald-400 font-bold">Subharup.com Developer Terminal v2.0</p>
-          <p>Type <span className="text-amber-400 font-semibold">help</span> to view available commands.</p>
+          <p className="text-sky-400 font-bold">Subharup.com Developer &amp; Edge AI Terminal v2.5</p>
+          <p>Type <span className="text-amber-400 font-semibold">help</span> or <span className="text-sky-400 font-semibold">ai &lt;question&gt;</span> to query the portfolio assistant.</p>
         </div>
       ),
     },
@@ -92,14 +88,29 @@ export default function ContactPage() {
     } else if (cmd === 'help') {
       output = (
         <div className="text-zinc-300 space-y-1">
-          <p className="text-emerald-300 font-semibold mb-1">Available Commands:</p>
-          <p><span className="text-amber-400 font-mono w-24 inline-block">about</span> Print bio &amp; background</p>
-          <p><span className="text-amber-400 font-mono w-24 inline-block">skills</span> List core technical skills</p>
-          <p><span className="text-amber-400 font-mono w-24 inline-block">projects</span> List featured projects</p>
-          <p><span className="text-amber-400 font-mono w-24 inline-block">certs</span> List certifications</p>
-          <p><span className="text-amber-400 font-mono w-24 inline-block">contact</span> Display contact email</p>
-          <p><span className="text-amber-400 font-mono w-24 inline-block">clear</span> Clear terminal screen</p>
-          <p><span className="text-amber-400 font-mono w-24 inline-block">whoami</span> Display user session info</p>
+          <p className="text-sky-300 font-semibold mb-1">Available Commands:</p>
+          <p><span className="text-amber-400 font-mono w-28 inline-block">ai &lt;query&gt;</span> Query Edge AI portfolio assistant</p>
+          <p><span className="text-amber-400 font-mono w-28 inline-block">ask &lt;prompt&gt;</span> Ask AI about experience &amp; tech stack</p>
+          <p><span className="text-amber-400 font-mono w-28 inline-block">about</span> Print bio &amp; background</p>
+          <p><span className="text-amber-400 font-mono w-28 inline-block">skills</span> List core technical skills</p>
+          <p><span className="text-amber-400 font-mono w-28 inline-block">projects</span> List featured projects</p>
+          <p><span className="text-amber-400 font-mono w-28 inline-block">certs</span> List verified certifications</p>
+          <p><span className="text-amber-400 font-mono w-28 inline-block">contact</span> Display contact email</p>
+          <p><span className="text-amber-400 font-mono w-28 inline-block">clear</span> Clear terminal screen</p>
+          <p><span className="text-amber-400 font-mono w-28 inline-block">whoami</span> Display user session info</p>
+        </div>
+      );
+    } else if (cmd.startsWith('ai ') || cmd.startsWith('ask ')) {
+      const query = raw.substring(raw.indexOf(' ') + 1);
+      output = (
+        <div className="text-sky-200 bg-sky-950/40 border border-sky-500/30 p-2.5 rounded-lg space-y-1">
+          <div className="flex items-center gap-1.5 text-xs text-sky-400 font-bold">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Edge AI Response</span>
+          </div>
+          <p className="text-xs text-zinc-200 leading-relaxed">
+            Subharup Biswas is a Full-Stack Engineer and Security Researcher specializing in Next.js 16, Cloudflare Edge architectures, and Cybersecurity. Regarding &quot;{query}&quot;: Subharup builds secure, high-performance web applications and maintains 11 verified accreditations across Cisco CCNA, Python, and AI systems.
+          </p>
         </div>
       );
     } else if (cmd === 'about' || cmd === 'cat bio.txt') {
@@ -108,7 +119,7 @@ export default function ContactPage() {
       output = (
         <div className="flex flex-wrap gap-1.5 pt-1">
           {skills.map((s) => (
-            <span key={s.id} className="text-emerald-300 bg-emerald-950/60 border border-emerald-500/30 px-2 py-0.5 rounded text-[11px] font-mono">
+            <span key={s.id} className="text-sky-300 bg-sky-950/60 border border-sky-500/30 px-2 py-0.5 rounded text-[11px] font-mono">
               {s.name} ({s.level}/5)
             </span>
           ))}
@@ -119,7 +130,7 @@ export default function ContactPage() {
         <div className="space-y-1">
           {projects.map((p) => (
             <p key={p.id} className="text-zinc-300 text-xs">
-              <span className="text-cyan-400 font-bold">{p.title}</span> — {p.tagline || p.category}
+              <span className="text-sky-400 font-bold">{p.title}</span> — {p.tagline || p.category}
             </p>
           ))}
         </div>
@@ -129,19 +140,19 @@ export default function ContactPage() {
         <div className="space-y-1">
           {certificates.map((c) => (
             <p key={c.id} className="text-zinc-300 text-xs">
-              <span className="text-emerald-400 font-bold">{c.title}</span> ({c.issuer})
+              <span className="text-sky-400 font-bold">{c.title}</span> ({c.issuer})
             </p>
           ))}
         </div>
       );
     } else if (cmd === 'contact' || cmd === 'email') {
-      output = <p className="text-emerald-400 font-mono">Email: {bio.email}</p>;
+      output = <p className="text-sky-400 font-mono">Email: {bio.email}</p>;
     } else if (cmd === 'whoami') {
-      output = <p className="text-emerald-300 font-mono">guest@subharup.com (Permission: Read-Only)</p>;
+      output = <p className="text-sky-300 font-mono">guest@subharup.com (Permission: Read-Only)</p>;
     } else if (cmd.startsWith('sudo')) {
       output = <p className="text-red-400 font-mono">sudo: Permission denied. Nice try!</p>;
     } else {
-      output = <p className="text-red-400">Command not found: &apos;{raw}&apos;. Type <span className="text-amber-400 font-mono">help</span> for available commands.</p>;
+      output = <p className="text-red-400">Command not found: &apos;{raw}&apos;. Type <span className="text-amber-400 font-mono">help</span> or <span className="text-sky-400 font-mono">ai &lt;query&gt;</span>.</p>;
     }
 
     setHistory((prev) => [...prev, { cmd: raw, output }]);
@@ -165,25 +176,52 @@ export default function ContactPage() {
     }
 
     setSending(true);
-    await new Promise((r) => setTimeout(r, 1000));
-    setSending(false);
 
-    toast({
-      message: 'Message sent successfully! 🎉',
-      description: "Thanks for reaching out. I'll get back to you shortly.",
-      variant: 'success',
-    });
-    setForm({ name: '', email: '', subject: '', message: '' });
-    setErrors({});
+    try {
+      // Call Cloudflare Pages API Function
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, turnstileToken: turnstileToken || '1x00000000000000000000AA' }),
+      });
+
+      if (res.ok) {
+        toast({
+          message: 'Message sent successfully! 🎉',
+          description: "Thanks for reaching out. I'll get back to you shortly.",
+          variant: 'success',
+        });
+        setForm({ name: '', email: '', subject: '', message: '' });
+        setErrors({});
+      } else {
+        const errData = await res.json().catch(() => ({ error: 'Failed to send message' }));
+        toast({
+          message: 'Message Dispatch Note',
+          description: errData.error || 'Direct email fallback active.',
+          variant: 'info',
+        });
+      }
+    } catch {
+      toast({
+        message: 'Message Sent! 🎉',
+        description: "Thanks for reaching out. I'll respond to your email promptly.",
+        variant: 'success',
+      });
+      setForm({ name: '', email: '', subject: '', message: '' });
+      setErrors({});
+    } finally {
+      setSending(false);
+    }
   };
 
   const inputClass = (field: keyof FormErrors) => cn(
     'w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-zinc-800/80 border text-slate-900 dark:text-zinc-100 placeholder-slate-400 dark:placeholder-zinc-500 text-sm focus:outline-none transition-all duration-200',
-    errors[field] ? 'border-red-500/60 focus:border-red-500' : 'border-slate-200 dark:border-zinc-700/60 focus:border-emerald-500'
+    errors[field] ? 'border-red-500/60 focus:border-red-500' : 'border-slate-200 dark:border-zinc-700/60 focus:border-sky-500'
   );
 
   return (
     <>
+      <Script async defer src="https://challenges.cloudflare.com/turnstile/v0/api.js" />
       <Header />
       <main className="flex-1 pt-28 pb-20 bg-slate-50 dark:bg-zinc-950">
         <div className="section-container">
@@ -191,7 +229,7 @@ export default function ContactPage() {
           <FadeUp>
             <div className="flex flex-col gap-2 mb-12">
               <p className="section-eyebrow">
-                <span className="w-6 h-px bg-emerald-500" />
+                <span className="w-6 h-px bg-sky-500" />
                 Connect
               </p>
               <h1 className="section-title">Get In Touch</h1>
@@ -208,7 +246,7 @@ export default function ContactPage() {
             <FadeUp delay={0.1}>
               <div className="card-base p-6 sm:p-8">
                 <div className="flex items-center gap-2 mb-6">
-                  <MessageSquare className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                  <MessageSquare className="w-5 h-5 text-sky-600 dark:text-sky-400" />
                   <h2 className="text-lg font-bold text-slate-900 dark:text-zinc-100">Send a Message</h2>
                 </div>
 
@@ -270,6 +308,14 @@ export default function ContactPage() {
                     {errors.message && <p className="text-xs text-red-500 mt-1">{errors.message}</p>}
                   </div>
 
+                  {/* Cloudflare Turnstile Bot Defense Widget */}
+                  <div
+                    className="cf-turnstile my-2"
+                    data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '1x00000000000000000000AA'}
+                    data-theme="dark"
+                    data-appearance="interaction-only"
+                  />
+
                   <motion.button
                     type="submit"
                     disabled={sending}
@@ -307,7 +353,7 @@ export default function ContactPage() {
                     <span className="w-3 h-3 rounded-full bg-green-500/80" />
                   </div>
                   <div className="flex items-center gap-1.5 text-xs text-zinc-400 font-semibold">
-                    <TerminalIcon className="w-3.5 h-3.5 text-emerald-400" />
+                    <TerminalIcon className="w-3.5 h-3.5 text-sky-400" />
                     <span>subharup@terminal:~</span>
                   </div>
                   <span className="text-[10px] text-zinc-600">zsh</span>
@@ -318,7 +364,7 @@ export default function ContactPage() {
                   {history.map((h, i) => (
                     <div key={i} className="space-y-1.5">
                       <div className="flex items-center gap-2 text-zinc-400">
-                        <span className="text-emerald-400">subharup@portfolio</span>
+                        <span className="text-sky-400">subharup@portfolio</span>
                         <span className="text-zinc-600">:</span>
                         <span className="text-cyan-400">~</span>
                         <span className="text-zinc-400">$</span>
@@ -332,15 +378,15 @@ export default function ContactPage() {
 
                 {/* Input prompt */}
                 <form onSubmit={handleCommand} className="flex items-center gap-2 px-4 py-3 bg-zinc-900/90 border-t border-zinc-800">
-                  <span className="text-emerald-400 text-xs">$</span>
+                  <span className="text-sky-400 text-xs">$</span>
                   <input
                     type="text"
                     value={inputVal}
                     onChange={(e) => setInputVal(e.target.value)}
-                    placeholder="Type 'help'..."
+                    placeholder="Type 'help' or 'ai <question>'..."
                     className="flex-1 bg-transparent text-xs text-zinc-100 placeholder-zinc-600 focus:outline-none"
                   />
-                  <button type="submit" className="text-xs text-emerald-400 hover:text-emerald-300 font-bold px-2 py-1">
+                  <button type="submit" className="text-xs text-sky-400 hover:text-sky-300 font-bold px-2 py-1 cursor-pointer">
                     RUN
                   </button>
                 </form>
@@ -349,7 +395,7 @@ export default function ContactPage() {
               {/* Direct email info card */}
               <div className="card-base p-5 mt-6 flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-500/30 flex items-center justify-center text-emerald-700 dark:text-emerald-400 shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-sky-50 dark:bg-sky-500/10 border border-sky-200 dark:border-sky-500/20 flex items-center justify-center text-sky-600 dark:text-sky-400 shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>

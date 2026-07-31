@@ -95,7 +95,7 @@ export default function SkillsPage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
             {filteredSkills.map((skill) => (
               <SkillChip
-                key={skill.id}
+                key={`${skill.id}-${skill.name}`}
                 skill={skill}
               />
             ))}

@@ -32,8 +32,8 @@ interface CertificateCardProps {
 
 export function CertificateCard({ certificate, onClick }: CertificateCardProps) {
   const style = CATEGORY_STYLES[certificate.category] ?? {
-    badge: 'bg-emerald-50 dark:bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-500/30',
-    icon: 'text-emerald-700 dark:text-emerald-400',
+    badge: 'bg-sky-50 dark:bg-sky-500/15 text-sky-800 dark:text-sky-300 border-sky-200 dark:border-sky-500/30',
+    icon: 'text-sky-700 dark:text-sky-400',
   };
 
   return (
@@ -54,7 +54,7 @@ export function CertificateCard({ certificate, onClick }: CertificateCardProps) 
       <div className="flex items-start justify-between gap-3">
         <div className={cn(
           'w-10 h-10 rounded-xl flex items-center justify-center shrink-0 border transition-colors',
-          'bg-slate-100 dark:bg-zinc-800/80 border-slate-200 dark:border-zinc-700/60 group-hover:border-emerald-500/40'
+          'bg-slate-100 dark:bg-zinc-800/80 border-slate-200 dark:border-zinc-700/60 group-hover:border-sky-500/40'
         )}>
           <Award className={cn('w-5 h-5', style.icon)} />
         </div>
@@ -62,14 +62,16 @@ export function CertificateCard({ certificate, onClick }: CertificateCardProps) 
           'text-[10px] font-mono font-semibold px-2 py-1 rounded-full border shrink-0',
           style.badge
         )}>
-          {certificate.category === 'Cybersecurity & Forensics' ? '🛡️ Security' :
-            certificate.category === 'Cloud & Systems' ? '☁️ Cloud' : '📜 Cert'}
+          {certificate.category === 'Cybersecurity & Forensics' || certificate.category === 'Cybersecurity & Networks' ? '🛡️ Security' :
+            certificate.category === 'Cloud & Systems' ? '☁️ Cloud' :
+            certificate.category === 'Software Engineering' ? '💻 Dev' :
+            certificate.category === 'Artificial Intelligence' ? '🤖 AI' : '📜 Cert'}
         </span>
       </div>
 
       {/* Title + Issuer */}
       <div className="flex-1">
-        <h3 className="text-sm font-semibold text-slate-900 dark:text-zinc-100 leading-snug mb-1 group-hover:text-emerald-700 dark:group-hover:text-emerald-300 transition-colors line-clamp-2">
+        <h3 className="text-sm font-semibold text-slate-900 dark:text-zinc-100 leading-snug mb-1 group-hover:text-sky-600 dark:group-hover:text-sky-300 transition-colors line-clamp-2">
           {certificate.title}
         </h3>
         <p className="text-xs text-slate-600 dark:text-zinc-400 font-medium">{certificate.issuer}</p>
@@ -85,7 +87,7 @@ export function CertificateCard({ certificate, onClick }: CertificateCardProps) 
           )}
         </div>
         {certificate.credentialId && (
-          <div className="flex items-center gap-1.5 text-[11px] text-slate-500 dark:text-zinc-400 font-mono">
+          <div className="flex items-center gap-1.5 text-[11px] text-sky-600 dark:text-sky-400 font-mono">
             <Hash className="w-3 h-3 shrink-0" />
             <span className="truncate">{certificate.credentialId}</span>
           </div>
@@ -93,7 +95,7 @@ export function CertificateCard({ certificate, onClick }: CertificateCardProps) 
       </div>
 
       {/* View indicator */}
-      <div className="flex items-center gap-1 text-[11px] text-slate-600 dark:text-zinc-400 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors font-medium">
+      <div className="flex items-center gap-1 text-[11px] text-slate-600 dark:text-zinc-400 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors font-medium">
         <ExternalLink className="w-3 h-3" />
         <span>View Credential</span>
       </div>

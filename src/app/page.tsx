@@ -88,7 +88,8 @@ export default function Home() {
                   fill
                   priority
                   loading="eager"
-                  sizes="(max-width: 768px) 112px, 144px"
+                  fetchPriority="high"
+                  sizes="(max-width: 640px) 112px, 144px"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
@@ -106,8 +107,11 @@ export default function Home() {
 
             {/* Headline */}
             <div className="flex flex-col items-center gap-3 max-w-4xl pt-2">
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-none text-slate-900 dark:text-zinc-100">
-                <LetterReveal text={`Hi, I'm ${bio.name}`} className="text-slate-900 dark:text-zinc-100" delay={0.1} />
+              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.15] mb-4 text-balance">
+                Hi, I&apos;m{' '}
+                <span className="inline-block whitespace-nowrap text-slate-900 dark:text-white">
+                  Subharup Biswas
+                </span>
               </h1>
 
               {/* Hydration-safe Role Switcher */}

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import React, { useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
@@ -40,6 +41,9 @@ export function CertificateModal({ certificate, onClose }: CertificateModalProps
     return () => { document.body.style.overflow = ''; };
   }, [certificate]);
 
+  const docAsset = certificate?.documentPath || certificate?.localAssetUrl;
+  const isImageDoc = certificate?.imageUrl || (docAsset && (docAsset.endsWith('.png') || docAsset.endsWith('.jpg') || docAsset.endsWith('.jpeg')));
+
   return (
     <AnimatePresence>
       {certificate && (
@@ -75,23 +79,26 @@ export function CertificateModal({ certificate, onClose }: CertificateModalProps
               <X className="w-5 h-5" />
             </button>
 
-            {/* Certificate image or placeholder */}
-            <div className="relative h-48 overflow-hidden bg-slate-100 dark:bg-zinc-900">
-              {certificate.imageUrl ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={certificate.imageUrl}
+            {/* Certificate Hero Preview Box */}
+            <div className="relative w-full h-48 sm:h-56 overflow-hidden bg-slate-900/90 border-b border-slate-800 flex items-center justify-center p-4">
+              {isImageDoc ? (
+                <Image
                   alt={certificate.title}
-                  className="w-full h-full object-cover"
+                  className="object-contain p-2"
+                  fill
+                  sizes="(max-width: 640px) 100vw, 480px"
+                  src={certificate.imageUrl || docAsset!}
+                />
+              ) : docAsset ? (
+                <iframe
+                  src={`${docAsset}#toolbar=0&navpanes=0&scrollbar=0`}
+                  title={certificate.title}
+                  className="w-full h-full rounded-lg border-0 pointer-events-none"
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-emerald-500/10 to-teal-500/10 dark:from-emerald-950/40 dark:to-teal-950/30">
-                  <div className="flex flex-col items-center gap-3">
-                    <div className="w-16 h-16 rounded-2xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-500/30 flex items-center justify-center text-emerald-700 dark:text-emerald-400">
-                      <Award className="w-8 h-8" />
-                    </div>
-                    <p className="text-xs font-mono text-slate-500 dark:text-zinc-500">Certificate Preview</p>
-                  </div>
+                <div className="flex flex-col items-center gap-2 text-sky-400">
+                  <Award className="w-10 h-10" />
+                  <span className="text-xs font-mono text-slate-400">Verified Credential</span>
                 </div>
               )}
             </div>
@@ -100,12 +107,12 @@ export function CertificateModal({ certificate, onClose }: CertificateModalProps
             <div className="p-6 flex flex-col gap-5">
               <div>
                 <div className="flex items-start gap-3 mb-2">
-                  <Shield className="w-4 h-4 text-emerald-600 dark:text-emerald-400 mt-1 shrink-0" />
+                  <Shield className="w-4 h-4 text-sky-600 dark:text-sky-400 mt-1 shrink-0" />
                   <div>
                     <h2 id="cert-modal-title" className="text-lg font-bold text-slate-900 dark:text-zinc-100 leading-tight">
                       {certificate.title}
                     </h2>
-                    <p className="text-sm text-emerald-700 dark:text-emerald-400 font-semibold mt-0.5">{certificate.issuer}</p>
+                    <p className="text-sm text-sky-600 dark:text-sky-400 font-semibold mt-0.5">{certificate.issuer}</p>
                   </div>
                 </div>
 
@@ -113,7 +120,7 @@ export function CertificateModal({ certificate, onClose }: CertificateModalProps
                 {certificate.tags && certificate.tags.length > 0 && (
                   <div className="flex flex-wrap gap-1.5 mt-3">
                     {certificate.tags.map((tag) => (
-                      <span key={tag} className="tag">{tag}</span>
+                      <span key={tag} className="bg-sky-50 dark:bg-sky-500/10 text-sky-800 dark:text-sky-300 border border-sky-200/50 dark:border-sky-500/20 px-2.5 py-0.5 rounded-full text-xs font-medium">{tag}</span>
                     ))}
                   </div>
                 )}
@@ -155,18 +162,18 @@ export function CertificateModal({ certificate, onClose }: CertificateModalProps
                     href={certificate.credentialUrl || certificate.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-primary justify-center flex-1"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-xs bg-sky-600 hover:bg-sky-700 text-white transition-all shadow-xs flex-1 cursor-pointer"
                   >
                     <ExternalLink className="w-4 h-4" />
                     Verify Credential
                   </a>
                 )}
-                {(certificate.documentPath || certificate.localAssetUrl) && (
+                {docAsset && (
                   <a
-                    href={certificate.documentPath || certificate.localAssetUrl}
+                    href={docAsset}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-secondary justify-center flex-1"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-xs bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 hover:border-sky-500 transition-all flex-1 cursor-pointer"
                   >
                     <FileText className="w-4 h-4" />
                     View Document

@@ -51,11 +51,13 @@ export const metadata: Metadata = {
     url: 'https://subharup.com',
     siteName: 'Subharup.com',
     type: 'website',
+    images: [{ url: '/favicon.png', width: 512, height: 512, alt: 'Subharup Biswas Emblem' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Subharup Biswas — Full-Stack Developer & Security Researcher',
     description: 'Building secure, high-performance digital experiences with Next.js 16, Cloudflare Workers, and modern web architectures.',
+    images: ['/favicon.png'],
   },
 };
 

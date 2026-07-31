@@ -78,7 +78,7 @@ export function SkillsSection() {
           <AnimatePresence mode="popLayout">
             {filteredSkills.map((skill) => (
               <SkillChip
-                key={skill.id}
+                key={`${skill.id}-${skill.name}`}
                 skill={skill}
               />
             ))}
