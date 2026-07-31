@@ -74,12 +74,7 @@ export default function Home() {
 
           <div className="relative z-10 section-container flex flex-col items-center text-center gap-8">
             {/* Avatar & Status Pulse Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="relative group"
-            >
+            <div className="relative group">
               <div className="absolute -inset-1 rounded-full bg-sky-500/30 dark:bg-sky-500/20 blur-sm group-hover:bg-sky-500/40 transition duration-300" />
               <div className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden ring-2 ring-sky-500/50 shadow-md bg-slate-100 dark:bg-zinc-900">
                 <Image
@@ -103,7 +98,7 @@ export default function Home() {
                   {bio.availabilityLabel}
                 </div>
               )}
-            </motion.div>
+            </div>
 
             {/* Headline */}
             <div className="flex flex-col items-center gap-3 max-w-4xl pt-2">
@@ -126,22 +121,12 @@ export default function Home() {
             </div>
 
             {/* Bio description */}
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.3 }}
-              className="text-base sm:text-lg text-slate-600 dark:text-zinc-400 leading-relaxed max-w-2xl"
-            >
+            <p className="text-base sm:text-lg text-slate-600 dark:text-zinc-400 leading-relaxed max-w-2xl">
               {bio.description}
-            </motion.p>
+            </p>
 
             {/* Dual CTAs */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.4 }}
-              className="flex flex-col sm:flex-row items-center gap-4"
-            >
+            <div className="flex flex-col sm:flex-row items-center gap-4">
               <Link href="/projects" className="btn-primary group">
                 Explore Projects
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -149,15 +134,10 @@ export default function Home() {
               <Link href="/contact" className="btn-secondary">
                 Get in Touch
               </Link>
-            </motion.div>
+            </div>
 
             {/* Social quick links */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4, delay: 0.5 }}
-              className="flex items-center gap-3 pt-2"
-            >
+            <div className="flex items-center gap-3 pt-2">
               {socialLinks.slice(0, 3).map((link) => (
                 <a
                   key={link.platform}
@@ -170,7 +150,7 @@ export default function Home() {
                   {SOCIAL_ICONS[link.icon] ?? null}
                 </a>
               ))}
-            </motion.div>
+            </div>
           </div>
         </section>
 
