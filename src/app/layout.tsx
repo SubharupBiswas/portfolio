@@ -1,0 +1,78 @@
+import type { Metadata } from 'next';
+import { Inter, JetBrains_Mono } from 'next/font/google';
+import './globals.css';
+import { PortfolioProvider } from '@/context/PortfolioContext';
+import { ThemeProvider } from '@/components/theme-provider';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains-mono',
+  display: 'swap',
+});
+
+export const metadata: Metadata = {
+  title: 'Subharup Biswas — Full-Stack Developer & Security Researcher',
+  description:
+    'Portfolio of Subharup Biswas — Full-Stack Developer, Security Researcher, and Systems Engineer. Building secure, high-performance digital experiences with Next.js 16, Cloudflare Workers, and modern web architectures.',
+  keywords: [
+    'Subharup Biswas',
+    'Subharup',
+    'portfolio',
+    'developer',
+    'security researcher',
+    'full stack',
+    'Next.js 16',
+    'Cloudflare Workers',
+    'cybersecurity',
+    'systems engineer',
+  ],
+  authors: [{ name: 'Subharup Biswas' }],
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
+  openGraph: {
+    title: 'Subharup Biswas — Full-Stack Developer & Security Researcher',
+    description: 'Building secure, high-performance digital experiences with Next.js 16, Cloudflare Workers, and modern web architectures.',
+    url: 'https://subharup.com',
+    siteName: 'Subharup.com',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Subharup Biswas — Full-Stack Developer & Security Researcher',
+    description: 'Building secure, high-performance digital experiences with Next.js 16, Cloudflare Workers, and modern web architectures.',
+  },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f8fafc' },
+    { media: '(prefers-color-scheme: dark)', color: '#09090b' },
+  ],
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${jetbrainsMono.variable}`}>
+      <body className="font-sans antialiased bg-slate-50 dark:bg-zinc-950 text-slate-900 dark:text-zinc-100 min-h-dvh flex flex-col transition-colors duration-300">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <PortfolioProvider>{children}</PortfolioProvider>
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}

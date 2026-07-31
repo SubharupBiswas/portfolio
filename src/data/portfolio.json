@@ -1,0 +1,620 @@
+{
+  "bio": {
+    "name": "Subharup Biswas",
+    "tagline": "Building secure, high-performance digital systems & edge infrastructure.",
+    "roles": [
+      "Full-Stack Developer",
+      "Security Researcher",
+      "Systems Engineer",
+      "Open Source Contributor"
+    ],
+    "description": "I'm a computer science engineering student and security researcher dedicated to building robust, high-performance digital systems. With deep expertise in cybersecurity, edge computing, network subnetting, and modern web engineering, I craft software that is visually stunning, lightning fast, and fortified from the ground up.",
+    "location": "India",
+    "availableForWork": true,
+    "availabilityLabel": "Open for Projects",
+    "email": "hello@subharup.com",
+    "resumeUrl": "#",
+    "avatarUrl": "/dp.png"
+  },
+  "socialLinks": [
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/SubharupBiswas",
+      "icon": "Github"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/subharupbiswas",
+      "icon": "Linkedin"
+    },
+    {
+      "platform": "Credly",
+      "url": "https://www.credly.com/users/subharupbiswas",
+      "icon": "Award"
+    },
+    {
+      "platform": "Email",
+      "url": "mailto:hello@subharup.com",
+      "icon": "Mail"
+    },
+    {
+      "platform": "Twitter",
+      "url": "https://twitter.com/subharup",
+      "icon": "Twitter"
+    }
+  ],
+  "skills": [
+    {
+      "id": "sk-001",
+      "name": "React 19",
+      "category": "Web Development",
+      "level": 5,
+      "tags": [
+        "frontend",
+        "ui",
+        "javascript",
+        "react"
+      ]
+    },
+    {
+      "id": "sk-002",
+      "name": "Next.js 16",
+      "category": "Web Development",
+      "level": 5,
+      "tags": [
+        "frontend",
+        "fullstack",
+        "app-router",
+        "ssr"
+      ]
+    },
+    {
+      "id": "sk-003",
+      "name": "TypeScript",
+      "category": "Web Development",
+      "level": 5,
+      "tags": [
+        "language",
+        "javascript",
+        "typed"
+      ]
+    },
+    {
+      "id": "sk-004",
+      "name": "Tailwind CSS v4",
+      "category": "Web Development",
+      "level": 5,
+      "tags": [
+        "frontend",
+        "css",
+        "design-system"
+      ]
+    },
+    {
+      "id": "sk-005",
+      "name": "Node.js & Express",
+      "category": "Web Development",
+      "level": 4,
+      "tags": [
+        "backend",
+        "runtime",
+        "async"
+      ]
+    },
+    {
+      "id": "sk-006",
+      "name": "PostgreSQL & Prisma",
+      "category": "Web Development",
+      "level": 4,
+      "tags": [
+        "database",
+        "sql",
+        "orm"
+      ]
+    },
+    {
+      "id": "sk-007",
+      "name": "REST APIs",
+      "category": "Web Development",
+      "level": 5,
+      "tags": [
+        "api",
+        "http",
+        "architecture"
+      ]
+    },
+    {
+      "id": "sk-008",
+      "name": "IPv4 Subnetting & CIDR",
+      "category": "Systems & Infrastructure",
+      "level": 5,
+      "tags": [
+        "networking",
+        "routing",
+        "cidr",
+        "tcp-ip"
+      ]
+    },
+    {
+      "id": "sk-009",
+      "name": "Linux Systems & Hardening",
+      "category": "Systems & Infrastructure",
+      "level": 5,
+      "tags": [
+        "os",
+        "sysadmin",
+        "security",
+        "bash"
+      ]
+    },
+    {
+      "id": "sk-010",
+      "name": "Cloudflare Workers & Edge",
+      "category": "Systems & Infrastructure",
+      "level": 5,
+      "tags": [
+        "edge",
+        "serverless",
+        "wrangler",
+        "cloud"
+      ]
+    },
+    {
+      "id": "sk-011",
+      "name": "Docker & Containers",
+      "category": "Systems & Infrastructure",
+      "level": 4,
+      "tags": [
+        "containers",
+        "devops",
+        "isolation"
+      ]
+    },
+    {
+      "id": "sk-012",
+      "name": "CI/CD & GitHub Actions",
+      "category": "Systems & Infrastructure",
+      "level": 4,
+      "tags": [
+        "automation",
+        "devops",
+        "pipelines"
+      ]
+    },
+    {
+      "id": "sk-013",
+      "name": "Network Security & Packet Sniffing",
+      "category": "Cybersecurity",
+      "level": 5,
+      "tags": [
+        "wireshark",
+        "tcpdump",
+        "firewall",
+        "protocols"
+      ]
+    },
+    {
+      "id": "sk-014",
+      "name": "Penetration Testing & Auditing",
+      "category": "Cybersecurity",
+      "level": 4,
+      "tags": [
+        "offensive-security",
+        "ethical-hacking",
+        "auditing"
+      ]
+    },
+    {
+      "id": "sk-015",
+      "name": "Digital Forensics",
+      "category": "Cybersecurity",
+      "level": 4,
+      "tags": [
+        "forensics",
+        "investigation",
+        "memory-analysis"
+      ]
+    },
+    {
+      "id": "sk-016",
+      "name": "Cryptography & WebCrypto",
+      "category": "Cybersecurity",
+      "level": 4,
+      "tags": [
+        "crypto",
+        "aes-gcm",
+        "security"
+      ]
+    },
+    {
+      "id": "sk-016",
+      "name": "Network Protocol Analysis (Wireshark)",
+      "category": "Cybersecurity",
+      "level": 4,
+      "tags": [
+        "packet-analysis",
+        "telemetry",
+        "networking"
+      ]
+    },
+    {
+      "id": "sk-017",
+      "name": "Framer Motion & Micro-Animations",
+      "category": "Web Development",
+      "level": 4,
+      "tags": [
+        "animation",
+        "ui-ux",
+        "frontend"
+      ]
+    },
+    {
+      "id": "sk-018",
+      "name": "Wireshark & Network Analysis",
+      "category": "Cybersecurity",
+      "level": 4,
+      "tags": [
+        "packet-analysis",
+        "network-diagnostics"
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "id": "cert-001",
+      "title": "CCNA: Enterprise Networking, Security, and Automation",
+      "issuer": "Cisco Networking Academy",
+      "issueDate": "2026-06-10",
+      "credentialId": "28f90163-2e1c-48b5-aa33-103fb98572fd",
+      "category": "Cybersecurity & Forensics",
+      "imageUrl": "",
+      "url": "https://www.credly.com/users/subharupbiswas/badges/28f90163-2e1c-48b5-aa33-103fb98572fd",
+      "localAssetUrl": "/certificates/CCNA-_Enterprise_Networking-_Security-_and_Automation_certificate_biswassubharup-gmail-com_1b17b5ed-b762-4e74-b171-126a68aa3d66.pdf",
+      "tags": [
+        "Enterprise Security",
+        "Automation",
+        "WAN",
+        "CCNA"
+      ]
+    },
+    {
+      "id": "cert-002",
+      "title": "CCNA: Switching, Routing, and Wireless Essentials",
+      "issuer": "Cisco Networking Academy",
+      "issueDate": "2026-06-10",
+      "credentialId": "c557c649-95af-49f1-85cd-abaaed9c73e8",
+      "category": "Cloud & Systems",
+      "imageUrl": "",
+      "url": "https://www.credly.com/users/subharupbiswas/badges/c557c649-95af-49f1-85cd-abaaed9c73e8",
+      "localAssetUrl": "/certificates/CCNA-_Switching-_Routing-_and_Wireless_Essentials_certificate_biswassubharup-gmail-com_1f44c657-0f3b-4ec8-9805-224b8ada9395.pdf",
+      "tags": [
+        "VLANs",
+        "Routing Protocols",
+        "Wireless LAN",
+        "Switching"
+      ]
+    },
+    {
+      "id": "cert-003",
+      "title": "CCNA: Introduction to Networks",
+      "issuer": "Cisco Networking Academy",
+      "issueDate": "2026-06-10",
+      "credentialId": "3f2873d6-243c-4cac-9922-f7b4092be6cf",
+      "category": "Cloud & Systems",
+      "imageUrl": "",
+      "url": "https://www.credly.com/users/subharupbiswas/badges/3f2873d6-243c-4cac-9922-f7b4092be6cf",
+      "localAssetUrl": "/certificates/CCNA-_Introduction_to_Networks_certificate_biswassubharup-gmail-com_ca3a8a88-7089-4d26-89c6-4ec44e0d0db1.pdf",
+      "tags": [
+        "OSI Model",
+        "TCP/IP",
+        "IPv4/IPv6 Subnetting",
+        "Ethernet"
+      ]
+    },
+    {
+      "id": "cert-004",
+      "title": "Python Essentials 2",
+      "issuer": "Cisco Networking Academy / OpenEDG Python Institute",
+      "issueDate": "2026-06-10",
+      "credentialId": "62a3e1b0-d1a6-43ac-af4c-abebe9fa05e5",
+      "category": "Professional Certifications",
+      "imageUrl": "",
+      "url": "https://www.credly.com/users/subharupbiswas/badges/62a3e1b0-d1a6-43ac-af4c-abebe9fa05e5",
+      "localAssetUrl": "/certificates/Python_Essentials_2_certificate_biswassubharup-gmail-com_9c77d0b1-fb6d-48be-aa34-1e5641210fab.pdf",
+      "tags": [
+        "OOP",
+        "Modules & Packages",
+        "Exceptions",
+        "File I/O"
+      ]
+    },
+    {
+      "id": "cert-005",
+      "title": "Python Essentials 1",
+      "issuer": "Cisco Networking Academy / OpenEDG Python Institute",
+      "issueDate": "2026-06-10",
+      "credentialId": "e6fb8d74-993e-4f06-8547-674f2bd70313",
+      "category": "Professional Certifications",
+      "imageUrl": "",
+      "url": "https://www.credly.com/users/subharupbiswas/badges/e6fb8d74-993e-4f06-8547-674f2bd70313",
+      "localAssetUrl": "/certificates/Python_Essentials_1_certificate_biswassubharup-gmail-com_3fe69463-309c-4ef7-97fb-8d98134ce819.pdf",
+      "tags": [
+        "Python Syntax",
+        "Control Flow",
+        "Functions",
+        "Data Structures"
+      ]
+    },
+    {
+      "id": "cert-006",
+      "title": "Introduction to Modern AI",
+      "issuer": "Cisco Networking Academy",
+      "issueDate": "2026-06-10",
+      "credentialId": "071208ff-8a9f-4a1d-8b26-d60f4e61cbb8",
+      "category": "Professional Certifications",
+      "imageUrl": "",
+      "url": "https://www.credly.com/users/subharupbiswas/badges/071208ff-8a9f-4a1d-8b26-d60f4e61cbb8",
+      "localAssetUrl": "/certificates/Introduction_to_Modern_AI_certificate_biswassubharup-gmail-com_7fbef3e2-9fde-4661-9b04-ac36648e3f8c.pdf",
+      "tags": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Neural Networks"
+      ]
+    },
+    {
+      "id": "cert-007",
+      "title": "Apply AI: Analyze Customer Reviews",
+      "issuer": "Cisco Networking Academy",
+      "issueDate": "2026-06-10",
+      "credentialId": "397cb751-3fc2-4fde-bb60-9c7579193e45",
+      "category": "Professional Certifications",
+      "imageUrl": "",
+      "url": "https://www.credly.com/users/subharupbiswas/badges/397cb751-3fc2-4fde-bb60-9c7579193e45",
+      "localAssetUrl": "/certificates/Apply_AI-_Analyze_Customer_Reviews_certificate_biswassubharup-gmail-com_db48f477-c3ef-4a31-990e-70911aaab64e.pdf",
+      "tags": [
+        "NLP",
+        "Sentiment Analysis",
+        "AI Applications",
+        "Data Analytics"
+      ]
+    },
+    {
+      "id": "cert-008",
+      "title": "Introduction to Data Science",
+      "issuer": "Cisco Networking Academy",
+      "issueDate": "2026-06-10",
+      "credentialId": "7059e3b4-2eb0-4d60-80df-160ba87e1eea",
+      "category": "Professional Certifications",
+      "imageUrl": "",
+      "url": "https://www.credly.com/users/subharupbiswas/badges/7059e3b4-2eb0-4d60-80df-160ba87e1eea",
+      "localAssetUrl": "/certificates/Introduction_to_Data_Science_certificate_biswassubharup-gmail-com_b9296535-bae6-4463-8f03-a206483f984b.pdf",
+      "tags": [
+        "Data Science",
+        "Data Visualization",
+        "Analytics",
+        "Big Data"
+      ]
+    },
+    {
+      "id": "cert-009",
+      "title": "Getting Started with Artificial Intelligence",
+      "issuer": "IBM SkillsBuild",
+      "issueDate": "2025-02-27",
+      "credentialId": "c144c3ab-6498-4b0b-b2b2-8f1b9413897c",
+      "category": "Professional Certifications",
+      "imageUrl": "",
+      "url": "https://www.credly.com/users/subharupbiswas/badges/c144c3ab-6498-4b0b-b2b2-8f1b9413897c",
+      "localAssetUrl": "/certificates/IBM.pdf",
+      "tags": [
+        "Artificial Intelligence",
+        "IBM SkillsBuild",
+        "Machine Learning",
+        "Prompt Engineering"
+      ]
+    },
+    {
+      "id": "cert-010",
+      "title": "Cybersecurity",
+      "issuer": "Tech Mahindra Foundation / Skill India Digital Hub",
+      "issueDate": "2024-04-24",
+      "credentialId": "9af7e3185cb44fc69887435b4f6f1761",
+      "category": "Cybersecurity & Forensics",
+      "imageUrl": "/certificates/Skill_India.png",
+      "url": "https://courses.skillindiadigital.gov.in/api/custom_api/view_certificate/9af7e3185cb44fc69887435b4f6f1761",
+      "localAssetUrl": "/certificates/Skill_India.png",
+      "tags": [
+        "Cybersecurity",
+        "Network Defense",
+        "Skill India",
+        "Threat Analysis"
+      ]
+    },
+    {
+      "id": "cert-011",
+      "title": "Getting Started with Microsoft Excel",
+      "issuer": "Coursera",
+      "issueDate": "2023-11-16",
+      "credentialId": "FKG94D34MJPE",
+      "category": "Professional Certifications",
+      "imageUrl": "",
+      "url": "https://coursera.org/verify/FKG94D34MJPE",
+      "localAssetUrl": "/certificates/Coursera_FKG94D34MJPE.pdf",
+      "tags": [
+        "Microsoft Excel",
+        "Spreadsheets",
+        "Data Analysis",
+        "Coursera"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "rupeecheck-ai",
+      "title": "RupeeCheck-AI",
+      "tagline": "Real-Time 24/7 USD/INR Spot Tracking & Edge AI Engine",
+      "description": "Real-Time 24/7 USD/INR Spot Tracking, Edge AI Forecasting & Multi-Channel Alert Engine built with TypeScript, React 19, Cloudflare Workers, and Tailwind CSS.",
+      "techStack": [
+        "TypeScript",
+        "React 19",
+        "Cloudflare Workers",
+        "Tailwind CSS",
+        "Edge AI"
+      ],
+      "liveUrl": "https://rupee.subnetmask.tech",
+      "githubUrl": "https://github.com/SubharupBiswas/RupeeCheck-AI",
+      "category": "Web Dev",
+      "imageUrl": "",
+      "featured": true,
+      "problemStatement": "Traditional currency tracking dashboards suffer from slow API polling and high server latency.",
+      "solution": "Built a low-latency edge forecasting engine with normalized IST timestamps and real-time multi-channel alerts.",
+      "architecture": "Serverless edge deployment on Cloudflare Workers using React 19 SPA routing with Wrangler environment bindings.",
+      "securityConsiderations": [
+        "Zero-leak environment variable handling for private API bindings",
+        "Strict CORS headers and API rate-limiting",
+        "Enforced zero-leak gitignore rules for secrets and build artifacts"
+      ],
+      "keyFeatures": [
+        "24/7 USD/INR spot tracking engine",
+        "Edge AI trend forecasting",
+        "Normalized IST timestamp processing",
+        "Multi-channel alert notification dispatch"
+      ],
+      "metrics": [
+        {
+          "label": "Latency",
+          "value": "< 10ms"
+        },
+        {
+          "label": "Uptime",
+          "value": "99.99%"
+        },
+        {
+          "label": "License",
+          "value": "MIT"
+        }
+      ]
+    },
+    {
+      "id": "cidr-subnet-calculator",
+      "title": "CIDR Subnet Calculator",
+      "tagline": "Zero-latency high-performance network subnetting calculator",
+      "description": "A zero-latency, high-performance network subnetting calculator built with Next.js 16, React, TypeScript, and Tailwind CSS. Engineered to execute sub-millisecond network space calculations directly on the V8 runtime.",
+      "techStack": [
+        "Next.js 16",
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS v4",
+        "Cloudflare"
+      ],
+      "liveUrl": "https://subnetmask.tech",
+      "githubUrl": "https://github.com/SubharupBiswas/cidr-subnet-calculator",
+      "category": "Systems",
+      "imageUrl": "",
+      "featured": true,
+      "problemStatement": "Network engineers require instant, offline-capable subnet calculations without heavy page reloads or remote server roundtrips.",
+      "solution": "Designed client-side bitwise calculation routines executing sub-millisecond network mask evaluation directly on the browser V8 engine.",
+      "architecture": "Next.js 16 App Router static export architecture deployed to Cloudflare Pages for instant edge distribution.",
+      "securityConsiderations": [
+        "Client-side input sanitization preventing injection",
+        "Zero external network dependency during subnet calculations"
+      ],
+      "keyFeatures": [
+        "IPv4 CIDR notation parsing",
+        "Subnet mask & wildcard mask generator",
+        "Usable host range breakdown",
+        "Bitwise binary matrix visualization"
+      ],
+      "metrics": [
+        {
+          "label": "Calc Speed",
+          "value": "< 0.5ms"
+        },
+        {
+          "label": "Lighthouse Score",
+          "value": "100/100"
+        }
+      ]
+    },
+    {
+      "id": "pulseping",
+      "title": "pulseping",
+      "tagline": "High-performance network telemetry & server uptime monitor",
+      "description": "A modern network telemetry and uptime monitoring service supporting multi-route edge pinging, webhook alert dispatches, and custom startup execution scripts.",
+      "techStack": [
+        "Next.js 16",
+        "TypeScript",
+        "Prisma",
+        "OpenNext",
+        "Cloudflare Workers",
+        "Tailwind CSS"
+      ],
+      "githubUrl": "https://github.com/SubharupBiswas/pulseping",
+      "category": "Systems",
+      "imageUrl": "",
+      "featured": true,
+      "problemStatement": "Monolithic monitoring platforms carry high infrastructure overhead and lag behind edge network failures.",
+      "solution": "Engineered a lightweight telemetry monitor using OpenNext and Prisma to execute multi-region edge health checks.",
+      "architecture": "Next.js App Router deployed via OpenNext onto Cloudflare Workers with Prisma ORM data persistence.",
+      "securityConsiderations": [
+        "Webhook signature verification",
+        "Role-based telemetry settings restriction"
+      ],
+      "keyFeatures": [
+        "Multi-region edge health checks",
+        "Instant webhook alerts",
+        "Prisma database telemetry logging",
+        "Custom startup deployment scripts"
+      ],
+      "metrics": [
+        {
+          "label": "Execution",
+          "value": "Edge Workers"
+        },
+        {
+          "label": "Alert Speed",
+          "value": "< 100ms"
+        }
+      ]
+    },
+    {
+      "id": "exam-timer",
+      "title": "Exam Timer 🚀✨",
+      "tagline": "Lightweight, stylish exam countdown dashboard",
+      "description": "A single-page web dashboard that visualizes upcoming exam sessions as a vertical grid of cards with live countdown timers, progress bars, and lab metadata.",
+      "techStack": [
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "GitHub Pages"
+      ],
+      "liveUrl": "https://subharupbiswas.github.io/Exam-Timer/",
+      "githubUrl": "https://github.com/SubharupBiswas/Exam-Timer",
+      "category": "Web Dev",
+      "imageUrl": "",
+      "featured": false,
+      "problemStatement": "Students need a clean, distraction-free countdown timer for scheduled exam sessions without complex dependencies.",
+      "solution": "Created a zero-dependency vanilla JavaScript dashboard optimized for fast hosting on GitHub Pages.",
+      "architecture": "Single-page HTML/CSS/JS application utilizing localStorage state cycles.",
+      "securityConsiderations": [
+        "Zero external third-party script dependencies",
+        "Sanitized local storage input parsing"
+      ],
+      "keyFeatures": [
+        "Live countdown timers",
+        "Progress bar tracking",
+        "Card sorting & filtering",
+        "Zero-build static deployment"
+      ],
+      "metrics": [
+        {
+          "label": "Bundle Size",
+          "value": "12 KB"
+        },
+        {
+          "label": "Dependencies",
+          "value": "0"
+        }
+      ]
+    }
+  ]
+}

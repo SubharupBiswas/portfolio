@@ -1,0 +1,173 @@
+@import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
+
+/* ─── Design Tokens (CSS Custom Properties) ─────────────────────── */
+:root {
+  /* Light theme: Slate/Zinc high contrast base with Emerald/Teal accents */
+  --bg-main: #f8fafc;        /* slate-50 */
+  --surface: #ffffff;        /* white */
+  --border-color: #e2e8f0;   /* slate-200 */
+  --text-main: #0f172a;      /* slate-900 */
+  --text-sub: #475569;       /* slate-600 */
+  --accent-primary: #059669; /* emerald-600 */
+  --accent-secondary: #0d9488; /* teal-600 */
+}
+
+.dark {
+  /* Dark theme: Deep Zinc background with crisp white text & Emerald accents */
+  --bg-main: #09090b;        /* zinc-950 */
+  --surface: #18181b;        /* zinc-900 */
+  --border-color: #27272a;   /* zinc-800 */
+  --text-main: #f4f4f5;      /* zinc-100 */
+  --text-sub: #a1a1aa;       /* zinc-400 */
+  --accent-primary: #10b981; /* emerald-500 */
+  --accent-secondary: #14b8a6; /* teal-500 */
+}
+
+/* ─── Global Resets ──────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100dvh;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ─── Custom Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-slate-100 dark:bg-zinc-900;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-zinc-700 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-emerald-600 dark:bg-emerald-500;
+}
+
+/* ─── Selection Color ────────────────────────────────────────────── */
+::selection {
+  background: rgba(16, 185, 129, 0.2);
+  color: #047857;
+}
+.dark ::selection {
+  background: rgba(16, 185, 129, 0.3);
+  color: #a7f3d0;
+}
+
+/* ─── Focus Ring ─────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #10b981;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ─── Dual-Theme Utility Classes ─────────────────────────────────── */
+@layer components {
+  /* Glassmorphism surfaces */
+  .glass {
+    @apply bg-white/80 dark:bg-zinc-900/70 backdrop-blur-xl border border-slate-200/90 dark:border-zinc-800/80 shadow-sm dark:shadow-none;
+  }
+  .glass-subtle {
+    @apply bg-white/60 dark:bg-zinc-900/50 backdrop-blur-md border border-slate-200/70 dark:border-zinc-800/60;
+  }
+  .glass-strong {
+    @apply bg-white/95 dark:bg-zinc-900/90 backdrop-blur-2xl border border-slate-300/80 dark:border-zinc-700/60 shadow-xl;
+  }
+
+  /* Section Layout */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .section-padding {
+    @apply py-20 sm:py-28;
+  }
+
+  /* Card Base & Hover */
+  .card-base {
+    @apply rounded-2xl border border-slate-200 dark:border-zinc-800 
+           bg-white dark:bg-zinc-900/70 backdrop-blur-sm
+           shadow-xs dark:shadow-none transition-all duration-300;
+  }
+  .card-hover {
+    @apply hover:border-emerald-500/50 dark:hover:border-emerald-500/40
+           hover:bg-white dark:hover:bg-zinc-900
+           hover:shadow-lg hover:shadow-emerald-500/5 dark:hover:shadow-none;
+  }
+
+  /* Button Base */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm
+           bg-emerald-600 text-white border border-emerald-600 shadow-sm
+           hover:bg-emerald-700 dark:hover:bg-emerald-500
+           active:scale-95 transition-all duration-200 cursor-pointer;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm
+           bg-slate-100 dark:bg-zinc-800 text-slate-800 dark:text-zinc-100
+           border border-slate-200 dark:border-zinc-700
+           hover:bg-slate-200/80 dark:hover:bg-zinc-700 hover:border-slate-300 dark:hover:border-zinc-600
+           active:scale-95 transition-all duration-200 cursor-pointer;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm
+           text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-zinc-100
+           hover:bg-slate-200/60 dark:hover:bg-zinc-800/60
+           active:scale-95 transition-all duration-200 cursor-pointer;
+  }
+
+  /* Tag / Pill */
+  .tag {
+    @apply inline-flex items-center px-2.5 py-1 rounded-md text-xs font-mono font-medium
+           bg-slate-100 dark:bg-zinc-800/90 text-slate-700 dark:text-zinc-300
+           border border-slate-200 dark:border-zinc-700/60;
+  }
+  .tag-active {
+    @apply bg-emerald-50 dark:bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-500/30;
+  }
+  .tag-cyan {
+    @apply bg-sky-50 dark:bg-sky-500/15 text-sky-800 dark:text-sky-300 border-sky-200 dark:border-sky-500/30;
+  }
+
+  /* Section Title & Subtitle */
+  .section-eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-mono font-semibold
+           text-emerald-600 dark:text-emerald-400 uppercase tracking-widest mb-4;
+  }
+  .section-title {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-zinc-100 leading-tight mb-4;
+  }
+  .section-subtitle {
+    @apply text-base sm:text-lg text-slate-600 dark:text-zinc-400 max-w-2xl leading-relaxed;
+  }
+}
+
+/* ─── Ambient Lighting Blobs ─────────────────────────────────────── */
+.orb {
+  border-radius: 50%;
+  filter: blur(90px);
+  position: absolute;
+  pointer-events: none;
+}
+
+/* ─── Toast Progress ─────────────────────────────────────────────── */
+.toast-progress {
+  animation: toastProgress 4s linear forwards;
+}
+@keyframes toastProgress {
+  from { width: 100%; }
+  to { width: 0%; }
+}
