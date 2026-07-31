@@ -53,18 +53,24 @@ export async function onRequestPost(context: { request: Request; env: Env }) {
       );
     }
 
+    // Dispatch Email via Resend
     const resendRes = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
-        Authorization: `Bearer ${resendApiKey}`,
+        'Authorization': `Bearer ${resendApiKey}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Portfolio Contact <onboarding@resend.dev>',
-        to: ['biswas.subh2018@gmail.com'],
+        from: 'Subharup Biswas <hello@subharup.com>',
+        to: ['hello@subharup.com'],
         reply_to: email,
         subject: `[Portfolio Inquiry] ${subject}`,
-        html: `<p><strong>From:</strong> ${name} (${email})</p><p><strong>Subject:</strong> ${subject}</p><p><strong>Message:</strong></p><p>${message.replace(/\n/g, '<br>')}</p>`,
+        html: `
+          <p><strong>From:</strong> ${name} (&lt;${email}&gt;)</p>
+          <p><strong>Subject:</strong> ${subject}</p>
+          <p><strong>Message:</strong></p>
+          <p>${message}</p>
+        `,
       }),
     });
 
