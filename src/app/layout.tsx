@@ -110,8 +110,8 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="/dp.png"
-          type="image/png"
+          href="/dp.webp"
+          type="image/webp"
           // @ts-expect-error fetchpriority is a valid HTML attribute
           fetchpriority="high"
         />

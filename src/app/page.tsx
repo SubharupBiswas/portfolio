@@ -83,7 +83,7 @@ export default function Home() {
               <div className="absolute -inset-1 rounded-full bg-sky-500/30 dark:bg-sky-500/20 blur-sm group-hover:bg-sky-500/40 transition duration-300" />
               <div className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden ring-2 ring-sky-500/50 shadow-md bg-slate-100 dark:bg-zinc-900">
                 <Image
-                  src="/dp.png"
+                  src="/dp.webp"
                   alt={bio.name}
                   fill
                   priority
@@ -199,7 +199,7 @@ export default function Home() {
                   <div className="flex items-start gap-4">
                     <div className="relative w-16 h-16 rounded-2xl overflow-hidden ring-2 ring-sky-500/40 shrink-0">
                       <Image
-                        src="/dp.png"
+                        src="/dp.webp"
                         alt={bio.name}
                         fill
                         priority
