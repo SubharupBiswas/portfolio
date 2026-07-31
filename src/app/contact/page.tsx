@@ -57,6 +57,17 @@ export default function ContactPage() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [sending, setSending] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState<string>('');
+  const turnstileWidgetIdRef = useRef<string | null>(null);
+
+  // Register global Turnstile callbacks
+  React.useEffect(() => {
+    (window as any).onTurnstileSuccess = (token: string) => setTurnstileToken(token);
+    (window as any).onTurnstileExpired = () => setTurnstileToken('');
+    return () => {
+      delete (window as any).onTurnstileSuccess;
+      delete (window as any).onTurnstileExpired;
+    };
+  }, []);
 
   // Terminal state
   const [history, setHistory] = useState<Array<{ cmd: string; output: React.ReactNode }>>([
@@ -211,6 +222,15 @@ export default function ContactPage() {
       setErrors({});
     } finally {
       setSending(false);
+      // Reset Turnstile widget so the token is refreshed for the next attempt
+      setTurnstileToken('');
+      try {
+        if (turnstileWidgetIdRef.current && (window as any).turnstile) {
+          (window as any).turnstile.reset(turnstileWidgetIdRef.current);
+        }
+      } catch {
+        // Ignore reset errors in non-CF environments
+      }
     }
   };
 
@@ -313,7 +333,8 @@ export default function ContactPage() {
                     className="cf-turnstile my-2"
                     data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '1x00000000000000000000AA'}
                     data-theme="dark"
-                    data-appearance="interaction-only"
+                    data-callback="onTurnstileSuccess"
+                    data-expired-callback="onTurnstileExpired"
                   />
 
                   <motion.button
