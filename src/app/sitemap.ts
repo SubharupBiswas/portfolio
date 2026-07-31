@@ -1,39 +1,16 @@
 import type { MetadataRoute } from 'next';
+import portfolioData from '@/data/portfolio.json';
+
+export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://subharup.com';
-  const lastModified = new Date();
+  const routes = ['', '/skills', '/projects', '/certificates', '/contact'];
 
-  return [
-    {
-      url: baseUrl,
-      lastModified,
-      changeFrequency: 'weekly',
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/skills`,
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/projects`,
-      lastModified,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/certificates`,
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified,
-      changeFrequency: 'yearly',
-      priority: 0.7,
-    },
-  ];
+  return routes.map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: route === '' ? 'weekly' : 'monthly',
+    priority: route === '' ? 1.0 : 0.8,
+  }));
 }
