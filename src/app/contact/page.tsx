@@ -328,13 +328,13 @@ export default function ContactPage() {
                     {errors.message && <p className="text-xs text-red-500 mt-1">{errors.message}</p>}
                   </div>
 
-                  {/* Cloudflare Turnstile Bot Defense Widget */}
+                  {/* Cloudflare Turnstile Bot Defense Widget — Invisible Mode */}
                   <div
-                    className="cf-turnstile my-2"
+                    className="cf-turnstile"
                     data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '1x00000000000000000000AA'}
-                    data-theme="dark"
                     data-callback="onTurnstileSuccess"
                     data-expired-callback="onTurnstileExpired"
+                    data-size="invisible"
                   />
 
                   <motion.button

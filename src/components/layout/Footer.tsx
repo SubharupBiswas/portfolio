@@ -40,6 +40,27 @@ export function Footer() {
             <p className="text-xs text-slate-500 dark:text-slate-400 text-center sm:text-left">
               © {new Date().getFullYear()}{' '}Subharup Biswas. Built with Next.js 16 &amp; React 19.
             </p>
+            <p className="text-xs text-slate-500 dark:text-zinc-500 mt-1 text-center sm:text-left">
+              Protected by Cloudflare Turnstile.{' '}
+              <a
+                href="https://www.cloudflare.com/privacypolicy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-sky-500 transition-colors"
+              >
+                Privacy Policy
+              </a>{' '}
+              &amp;{' '}
+              <a
+                href="https://www.cloudflare.com/website-terms/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-sky-500 transition-colors"
+              >
+                Terms of Service
+              </a>
+              .
+            </p>
           </div>
 
           {/* Center: Availability status */}

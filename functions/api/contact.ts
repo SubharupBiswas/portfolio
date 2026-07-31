@@ -7,13 +7,19 @@ export async function onRequestPost(context: { request: Request; env: Env }) {
   try {
     const { request, env } = context;
 
-    // Resolve keys from Cloudflare context.env first, process.env second
     const turnstileSecret = env?.TURNSTILE_SECRET_KEY || process.env.TURNSTILE_SECRET_KEY;
     const resendApiKey = env?.RESEND_API_KEY || process.env.RESEND_API_KEY;
 
     if (!turnstileSecret) {
       return new Response(
-        JSON.stringify({ error: 'Missing TURNSTILE_SECRET_KEY configuration' }),
+        JSON.stringify({ error: 'Server Config Error: TURNSTILE_SECRET_KEY missing' }),
+        { status: 500, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
+
+    if (!resendApiKey) {
+      return new Response(
+        JSON.stringify({ error: 'Server Config Error: RESEND_API_KEY missing' }),
         { status: 500, headers: { 'Content-Type': 'application/json' } }
       );
     }
@@ -23,12 +29,11 @@ export async function onRequestPost(context: { request: Request; env: Env }) {
 
     if (!turnstileToken) {
       return new Response(
-        JSON.stringify({ error: 'Bot security verification failed: Token missing' }),
+        JSON.stringify({ error: 'Verification Error: Turnstile token missing' }),
         { status: 400, headers: { 'Content-Type': 'application/json' } }
       );
     }
 
-    // Verify token with Cloudflare Turnstile API
     const formData = new FormData();
     formData.append('secret', turnstileSecret);
     formData.append('response', turnstileToken);
@@ -41,16 +46,13 @@ export async function onRequestPost(context: { request: Request; env: Env }) {
     const verifyOutcome = (await verifyRes.json()) as { success: boolean; 'error-codes'?: string[] };
 
     if (!verifyOutcome.success) {
+      const errorDetails = verifyOutcome['error-codes']?.join(', ') || 'Invalid token';
       return new Response(
-        JSON.stringify({
-          error: 'Bot security verification failed',
-          details: verifyOutcome['error-codes'] || [],
-        }),
+        JSON.stringify({ error: `Bot verification failed: ${errorDetails}` }),
         { status: 400, headers: { 'Content-Type': 'application/json' } }
       );
     }
 
-    // Dispatch email via Resend API
     const resendRes = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
@@ -61,14 +63,15 @@ export async function onRequestPost(context: { request: Request; env: Env }) {
         from: 'Portfolio Contact <onboarding@resend.dev>',
         to: ['biswas.subh2018@gmail.com'],
         reply_to: email,
-        subject: `[Portfolio Inquiry] ${subject || 'New Message'}`,
-        html: `<p><strong>From:</strong> ${name} (${email})</p><p><strong>Subject:</strong> ${subject || 'N/A'}</p><p><strong>Message:</strong></p><p>${message.replace(/\n/g, '<br>')}</p>`,
+        subject: `[Portfolio Inquiry] ${subject}`,
+        html: `<p><strong>From:</strong> ${name} (${email})</p><p><strong>Subject:</strong> ${subject}</p><p><strong>Message:</strong></p><p>${message.replace(/\n/g, '<br>')}</p>`,
       }),
     });
 
     if (!resendRes.ok) {
+      const resendErr = (await resendRes.json().catch(() => ({ message: 'Failed to parse response' }))) as any;
       return new Response(
-        JSON.stringify({ error: 'Failed to dispatch email via provider' }),
+        JSON.stringify({ error: `Resend Dispatch Failed: ${resendErr.message || JSON.stringify(resendErr)}` }),
         { status: 500, headers: { 'Content-Type': 'application/json' } }
       );
     }
@@ -79,7 +82,7 @@ export async function onRequestPost(context: { request: Request; env: Env }) {
     );
   } catch (err: any) {
     return new Response(
-      JSON.stringify({ error: err?.message || 'Internal server error' }),
+      JSON.stringify({ error: `Unhandled Error: ${err?.message || err}` }),
       { status: 500, headers: { 'Content-Type': 'application/json' } }
     );
   }
