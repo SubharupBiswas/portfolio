@@ -1,19 +1,20 @@
 {
   "bio": {
     "name": "Subharup Biswas",
-    "tagline": "Building secure, high-performance digital systems & edge infrastructure.",
+    "tagline": "B.Tech Computer Science & Engineering (Cyber Security) Student | Security Researcher",
     "roles": [
-      "Full-Stack Developer",
       "Security Researcher",
+      "Full-Stack Developer",
       "Systems Engineer",
-      "Open Source Contributor"
+      "B.Tech CSE (Cyber Security) Student"
     ],
-    "description": "I'm a computer science engineering student and security researcher dedicated to building robust, high-performance digital systems. With deep expertise in cybersecurity, edge computing, network subnetting, and modern web engineering, I craft software that is visually stunning, lightning fast, and fortified from the ground up.",
-    "location": "India",
+    "description": "Computer Science & Engineering (Cyber Security) undergraduate from Techno Main Salt Lake (Graduating 2027). Passionate about cybersecurity, ethical hacking, network security, and secure software development. Focused on practical problem-solving, log analysis, and building technology that is both innovative and secure.",
+    "location": "Kolkata, West Bengal, India",
+    "phone": "+91 6289925694",
     "availableForWork": true,
     "availabilityLabel": "Open for Projects",
-    "email": "hello@subharup.com",
-    "resumeUrl": "#",
+    "email": "contact@subharup.com",
+    "resumeUrl": "/Profile.pdf",
     "avatarUrl": "/dp.webp"
   },
   "socialLinks": [
@@ -24,7 +25,7 @@
     },
     {
       "platform": "LinkedIn",
-      "url": "https://linkedin.com/in/subharupbiswas",
+      "url": "https://www.linkedin.com/in/subharupbiswas",
       "icon": "Linkedin"
     },
     {
@@ -34,7 +35,7 @@
     },
     {
       "platform": "Email",
-      "url": "mailto:hello@subharup.com",
+      "url": "mailto:contact@subharup.com",
       "icon": "Mail"
     },
     {
@@ -46,30 +47,77 @@
   "skills": [
     {
       "id": "sk-001",
-      "name": "React 19",
-      "category": "Web Development",
+      "name": "Computer Networking",
+      "category": "Cybersecurity",
       "level": 5,
       "tags": [
-        "frontend",
-        "ui",
-        "javascript",
-        "react"
+        "networking",
+        "tcp-ip",
+        "ccna",
+        "routing"
       ]
     },
     {
       "id": "sk-002",
-      "name": "Next.js 16",
+      "name": "Log Analysis & Incident Response",
+      "category": "Cybersecurity",
+      "level": 5,
+      "tags": [
+        "log-analysis",
+        "incident-response",
+        "siem",
+        "audit"
+      ]
+    },
+    {
+      "id": "sk-003",
+      "name": "Internet & Network Security",
+      "category": "Cybersecurity",
+      "level": 5,
+      "tags": [
+        "security",
+        "firewalls",
+        "network-defense",
+        "encryption"
+      ]
+    },
+    {
+      "id": "sk-004",
+      "name": "Ethical Hacking & Auditing",
+      "category": "Cybersecurity",
+      "level": 4,
+      "tags": [
+        "penetration-testing",
+        "vulnerability-assessment",
+        "security-audit"
+      ]
+    },
+    {
+      "id": "sk-005",
+      "name": "Secure Software Development",
+      "category": "Cybersecurity",
+      "level": 5,
+      "tags": [
+        "secure-coding",
+        "appsec",
+        "web-security",
+        "owasp"
+      ]
+    },
+    {
+      "id": "sk-006",
+      "name": "React 19 & Next.js 16",
       "category": "Web Development",
       "level": 5,
       "tags": [
         "frontend",
         "fullstack",
-        "app-router",
+        "typescript",
         "ssr"
       ]
     },
     {
-      "id": "sk-003",
+      "id": "sk-007",
       "name": "TypeScript",
       "category": "Web Development",
       "level": 5,
@@ -80,7 +128,7 @@
       ]
     },
     {
-      "id": "sk-004",
+      "id": "sk-008",
       "name": "Tailwind CSS v4",
       "category": "Web Development",
       "level": 5,
@@ -91,7 +139,7 @@
       ]
     },
     {
-      "id": "sk-005",
+      "id": "sk-009",
       "name": "Node.js & Express",
       "category": "Web Development",
       "level": 4,
@@ -102,7 +150,7 @@
       ]
     },
     {
-      "id": "sk-006",
+      "id": "sk-010",
       "name": "PostgreSQL & Prisma",
       "category": "Web Development",
       "level": 4,
@@ -113,7 +161,7 @@
       ]
     },
     {
-      "id": "sk-007",
+      "id": "sk-011",
       "name": "REST APIs",
       "category": "Web Development",
       "level": 5,
@@ -124,7 +172,7 @@
       ]
     },
     {
-      "id": "sk-008",
+      "id": "sk-012",
       "name": "IPv4 Subnetting & CIDR",
       "category": "Systems & Infrastructure",
       "level": 5,
@@ -136,7 +184,7 @@
       ]
     },
     {
-      "id": "sk-009",
+      "id": "sk-013",
       "name": "Linux Systems & Hardening",
       "category": "Systems & Infrastructure",
       "level": 5,
@@ -148,7 +196,7 @@
       ]
     },
     {
-      "id": "sk-010",
+      "id": "sk-014",
       "name": "Cloudflare Workers & Edge",
       "category": "Systems & Infrastructure",
       "level": 5,
@@ -160,7 +208,7 @@
       ]
     },
     {
-      "id": "sk-011",
+      "id": "sk-015",
       "name": "Docker & Containers",
       "category": "Systems & Infrastructure",
       "level": 4,
@@ -171,7 +219,7 @@
       ]
     },
     {
-      "id": "sk-012",
+      "id": "sk-016",
       "name": "CI/CD & GitHub Actions",
       "category": "Systems & Infrastructure",
       "level": 4,
@@ -182,7 +230,7 @@
       ]
     },
     {
-      "id": "sk-013",
+      "id": "sk-017",
       "name": "Network Security & Packet Sniffing",
       "category": "Cybersecurity",
       "level": 5,
@@ -194,18 +242,7 @@
       ]
     },
     {
-      "id": "sk-014",
-      "name": "Penetration Testing & Auditing",
-      "category": "Cybersecurity",
-      "level": 4,
-      "tags": [
-        "offensive-security",
-        "ethical-hacking",
-        "auditing"
-      ]
-    },
-    {
-      "id": "sk-015",
+      "id": "sk-018",
       "name": "Digital Forensics",
       "category": "Cybersecurity",
       "level": 4,
@@ -216,7 +253,7 @@
       ]
     },
     {
-      "id": "sk-016",
+      "id": "sk-019",
       "name": "Cryptography & WebCrypto",
       "category": "Cybersecurity",
       "level": 4,
@@ -225,41 +262,69 @@
         "aes-gcm",
         "security"
       ]
-    },
-    {
-      "id": "sk-017",
-      "name": "Network Protocol Analysis (Wireshark)",
-      "category": "Cybersecurity",
-      "level": 4,
-      "tags": [
-        "packet-analysis",
-        "telemetry",
-        "networking"
-      ]
-    },
-    {
-      "id": "sk-018",
-      "name": "Framer Motion & Micro-Animations",
-      "category": "Web Development",
-      "level": 4,
-      "tags": [
-        "animation",
-        "ui-ux",
-        "frontend"
-      ]
-    },
-    {
-      "id": "sk-019",
-      "name": "Wireshark & Network Analysis",
-      "category": "Cybersecurity",
-      "level": 4,
-      "tags": [
-        "packet-analysis",
-        "network-diagnostics"
-      ]
     }
   ],
   "certificates": [
+    {
+      "id": "upgrad-fundamentals-cybersecurity",
+      "title": "Fundamentals of Cybersecurity",
+      "issuer": "upGrad",
+      "issueDate": "Issued Nov 2023",
+      "credentialId": "ef574fe3-c730-456e-b766-7ad3407e45e1",
+      "url": "https://upgrad.verification.givemycertificate.com/v/ef574fe3-c730-456e-b766-7ad3407e45e1",
+      "credentialUrl": "https://upgrad.verification.givemycertificate.com/v/ef574fe3-c730-456e-b766-7ad3407e45e1",
+      "category": "Cybersecurity & Networks",
+      "image": "/certificates/png/Cyber.png",
+      "imageUrl": "/certificates/png/Cyber.png",
+      "pdfUrl": "/certificates/pdf/Cyber.pdf",
+      "localAssetUrl": "/certificates/pdf/Cyber.pdf",
+      "documentPath": "/certificates/pdf/Cyber.pdf",
+      "tags": [
+        "Cybersecurity Fundamentals",
+        "Network Security",
+        "Information Security"
+      ]
+    },
+    {
+      "id": "smart-bengal-hackathon-2025",
+      "title": "Smart Bengal Hackathon 2025 — Certificate of Appreciation",
+      "issuer": "RCC Institute of Information Technology (RCCIIT)",
+      "issueDate": "Issued May 2025",
+      "credentialId": "SBHS_S150",
+      "category": "Cybersecurity & Networks",
+      "image": "/certificates/png/SBHS_S150.png",
+      "imageUrl": "/certificates/png/SBHS_S150.png",
+      "pdfUrl": "/certificates/pdf/SBHS_S150.pdf",
+      "localAssetUrl": "/certificates/pdf/SBHS_S150.pdf",
+      "documentPath": "/certificates/pdf/SBHS_S150.pdf",
+      "tags": [
+        "Hackathon Prototype Development",
+        "Cybersecurity Solutioning",
+        "Team Collaboration"
+      ]
+    },
+    {
+      "id": "deloitte-cyber-job-simulation",
+      "title": "Deloitte Australia — Cyber Job Simulation",
+      "issuer": "Forage / Deloitte",
+      "issueDate": "Issued Jun 2025",
+      "credentialId": "kR7A2ctNhTY6usBTq",
+      "url": "https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/E9pA6qsdbeyEkp3ti_9PBTqmSxAf6zZTseP_GBvkrwWYqEQRqpErH_1751215102924_completion_certificate.pdf",
+      "credentialUrl": "https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/E9pA6qsdbeyEkp3ti_9PBTqmSxAf6zZTseP_GBvkrwWYqEQRqpErH_1751215102924_completion_certificate.pdf",
+      "image": "/certificates/png/deloitte.png",
+      "imageUrl": "/certificates/png/deloitte.png",
+      "pdfUrl": "/certificates/pdf/Cyber Job Simulation.pdf",
+      "documentPath": "/certificates/pdf/Cyber Job Simulation.pdf",
+      "localAssetUrl": "/certificates/pdf/Cyber Job Simulation.pdf",
+      "category": "Cybersecurity & Networks",
+      "tags": [
+        "Log Analysis",
+        "Cybersecurity Incident Response",
+        "Web Activity Analysis",
+        "Python"
+      ],
+      "description": "Completed hands-on simulation analyzing web activity logs, investigating suspicious user activity, and supporting breach mitigation strategies."
+    },
     {
       "id": "ccna-3",
       "title": "CCNA: Enterprise Networking, Security, and Automation",
@@ -269,7 +334,9 @@
       "url": "https://www.credly.com/badges/28f90163-2e1c-48b5-aa33-103fb98572fd",
       "credentialUrl": "https://www.credly.com/badges/28f90163-2e1c-48b5-aa33-103fb98572fd",
       "category": "Cybersecurity & Networks",
+      "image": "/certificates/png/ccna-3.png",
       "imageUrl": "/certificates/png/ccna-3.png",
+      "pdfUrl": "/certificates/pdf/ccna-3.pdf",
       "localAssetUrl": "/certificates/pdf/ccna-3.pdf",
       "documentPath": "/certificates/pdf/ccna-3.pdf",
       "tags": [
@@ -288,7 +355,9 @@
       "url": "https://www.credly.com/badges/c557c649-95af-49f1-85cd-abaaed9c73e8",
       "credentialUrl": "https://www.credly.com/badges/c557c649-95af-49f1-85cd-abaaed9c73e8",
       "category": "Cybersecurity & Networks",
+      "image": "/certificates/png/ccna-2.png",
       "imageUrl": "/certificates/png/ccna-2.png",
+      "pdfUrl": "/certificates/pdf/ccna-2.pdf",
       "localAssetUrl": "/certificates/pdf/ccna-2.pdf",
       "documentPath": "/certificates/pdf/ccna-2.pdf",
       "tags": [
@@ -307,7 +376,9 @@
       "url": "https://www.credly.com/badges/3f2873d6-243c-4cac-9922-f7b4092be6cf",
       "credentialUrl": "https://www.credly.com/badges/3f2873d6-243c-4cac-9922-f7b4092be6cf",
       "category": "Cybersecurity & Networks",
+      "image": "/certificates/png/ccna-1.png",
       "imageUrl": "/certificates/png/ccna-1.png",
+      "pdfUrl": "/certificates/pdf/ccna-1.pdf",
       "localAssetUrl": "/certificates/pdf/ccna-1.pdf",
       "documentPath": "/certificates/pdf/ccna-1.pdf",
       "tags": [
@@ -326,7 +397,9 @@
       "url": "https://www.credly.com/badges/62a3e1b0-d1a6-43ac-af4c-abebe9fa05e5",
       "credentialUrl": "https://www.credly.com/badges/62a3e1b0-d1a6-43ac-af4c-abebe9fa05e5",
       "category": "Software Engineering",
+      "image": "/certificates/png/python-2.png",
       "imageUrl": "/certificates/png/python-2.png",
+      "pdfUrl": "/certificates/pdf/python-2.pdf",
       "localAssetUrl": "/certificates/pdf/python-2.pdf",
       "documentPath": "/certificates/pdf/python-2.pdf",
       "tags": [
@@ -345,7 +418,9 @@
       "url": "https://www.credly.com/badges/e6fb8d74-993e-4f06-8547-674f2bd70313",
       "credentialUrl": "https://www.credly.com/badges/e6fb8d74-993e-4f06-8547-674f2bd70313",
       "category": "Software Engineering",
+      "image": "/certificates/png/python-1.png",
       "imageUrl": "/certificates/png/python-1.png",
+      "pdfUrl": "/certificates/pdf/python-1.pdf",
       "localAssetUrl": "/certificates/pdf/python-1.pdf",
       "documentPath": "/certificates/pdf/python-1.pdf",
       "tags": [
@@ -364,7 +439,9 @@
       "url": "https://www.credly.com/badges/071208ff-8a9f-4a1d-8b26-d60f4e61cbb8",
       "credentialUrl": "https://www.credly.com/badges/071208ff-8a9f-4a1d-8b26-d60f4e61cbb8",
       "category": "Artificial Intelligence",
+      "image": "/certificates/png/modern-ai.png",
       "imageUrl": "/certificates/png/modern-ai.png",
+      "pdfUrl": "/certificates/pdf/modern-ai.pdf",
       "localAssetUrl": "/certificates/pdf/modern-ai.pdf",
       "documentPath": "/certificates/pdf/modern-ai.pdf",
       "tags": [
@@ -382,7 +459,9 @@
       "url": "https://www.credly.com/badges/397cb751-3fc2-4fde-bb60-9c7579193e45",
       "credentialUrl": "https://www.credly.com/badges/397cb751-3fc2-4fde-bb60-9c7579193e45",
       "category": "Artificial Intelligence",
+      "image": "/certificates/png/apply-ai.png",
       "imageUrl": "/certificates/png/apply-ai.png",
+      "pdfUrl": "/certificates/pdf/apply-ai.pdf",
       "localAssetUrl": "/certificates/pdf/apply-ai.pdf",
       "documentPath": "/certificates/pdf/apply-ai.pdf",
       "tags": [
@@ -401,7 +480,9 @@
       "url": "https://www.credly.com/badges/7059e3b4-2eb0-4d60-80df-160ba87e1eea",
       "credentialUrl": "https://www.credly.com/badges/7059e3b4-2eb0-4d60-80df-160ba87e1eea",
       "category": "Artificial Intelligence",
+      "image": "/certificates/png/data-science.png",
       "imageUrl": "/certificates/png/data-science.png",
+      "pdfUrl": "/certificates/pdf/data-science.pdf",
       "localAssetUrl": "/certificates/pdf/data-science.pdf",
       "documentPath": "/certificates/pdf/data-science.pdf",
       "tags": [
@@ -420,7 +501,9 @@
       "url": "https://www.credly.com/badges/c144c3ab-6498-4b0b-b2b2-8f1b9413897c",
       "credentialUrl": "https://www.credly.com/badges/c144c3ab-6498-4b0b-b2b2-8f1b9413897c",
       "category": "Artificial Intelligence",
+      "image": "/certificates/png/ibm-ai.png",
       "imageUrl": "/certificates/png/ibm-ai.png",
+      "pdfUrl": "/certificates/pdf/ibm-ai.pdf",
       "localAssetUrl": "/certificates/pdf/ibm-ai.pdf",
       "documentPath": "/certificates/pdf/ibm-ai.pdf",
       "tags": [
@@ -439,7 +522,9 @@
       "url": "https://courses.skillindiadigital.gov.in/api/custom_api/view_certificate/9af7e3185cb44fc69887435b4f6f1761",
       "credentialUrl": "https://courses.skillindiadigital.gov.in/api/custom_api/view_certificate/9af7e3185cb44fc69887435b4f6f1761",
       "category": "Cybersecurity & Networks",
+      "image": "/certificates/png/skill-india.png",
       "imageUrl": "/certificates/png/skill-india.png",
+      "pdfUrl": "/certificates/pdf/skill-india.pdf",
       "localAssetUrl": "/certificates/pdf/skill-india.pdf",
       "documentPath": "/certificates/pdf/skill-india.pdf",
       "tags": [
@@ -458,7 +543,9 @@
       "url": "https://coursera.org/share/8a7516cf075f83b495f7254008089695",
       "credentialUrl": "https://coursera.org/share/8a7516cf075f83b495f7254008089695",
       "category": "Artificial Intelligence",
+      "image": "/certificates/png/coursera.png",
       "imageUrl": "/certificates/png/coursera.png",
+      "pdfUrl": "/certificates/pdf/coursera.pdf",
       "localAssetUrl": "/certificates/pdf/coursera.pdf",
       "documentPath": "/certificates/pdf/coursera.pdf",
       "tags": [
@@ -466,6 +553,57 @@
         "Coursera",
         "Prompt Engineering"
       ]
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp-001",
+      "role": "Student Representative",
+      "organization": "Techno Main - Salt Lake",
+      "location": "Kolkata, West Bengal",
+      "period": "March 2024 – April 2024",
+      "description": "Served as the B.Tech CSE (Cyber Security) Student Representative for the 2027 batch, coordinating student initiatives, department communications, and academic logistics."
+    }
+  ],
+  "education": [
+    {
+      "id": "edu-001",
+      "institution": "Techno Main - Salt Lake",
+      "degree": "B.Tech in Computer Science Engineering (Cyber Security)",
+      "period": "August 2023 – August 2027",
+      "location": "Kolkata, West Bengal"
+    },
+    {
+      "id": "edu-002",
+      "institution": "Bharatiya Vidya Bhavan's",
+      "degree": "Senior Secondary Education (Class XI - XII)",
+      "period": "April 2021 – March 2023",
+      "location": "Kolkata, West Bengal"
+    },
+    {
+      "id": "edu-003",
+      "institution": "Maxfort School, Dwarka",
+      "degree": "Secondary Education (Class IX - X)",
+      "period": "April 2019 – March 2021",
+      "location": "New Delhi"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Full Professional"
+    },
+    {
+      "language": "Bengali",
+      "fluency": "Limited Working"
+    },
+    {
+      "language": "Hindi",
+      "fluency": "Limited Working"
+    },
+    {
+      "language": "Tamil",
+      "fluency": "Elementary"
     }
   ],
   "projects": [

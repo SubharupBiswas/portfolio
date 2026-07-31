@@ -7,6 +7,7 @@ import {
   CheckCircle2,
   Code2,
   ExternalLink,
+  FileText,
   FolderGit2,
   Github,
   Linkedin,
@@ -125,12 +126,21 @@ export default function Home() {
               {bio.description}
             </p>
 
-            {/* Dual CTAs */}
+            {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <Link href="/projects" className="btn-primary group">
                 Explore Projects
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
+              <a
+                href={bio.resumeUrl || '/Profile.pdf'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary flex items-center gap-2"
+              >
+                <FileText className="w-4 h-4 text-sky-600 dark:text-sky-400" />
+                Resume
+              </a>
               <Link href="/contact" className="btn-secondary">
                 Get in Touch
               </Link>

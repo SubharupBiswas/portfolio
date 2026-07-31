@@ -42,8 +42,11 @@ export function CertificateModal({ certificate, onClose }: CertificateModalProps
     return () => { document.body.style.overflow = ''; };
   }, [certificate]);
 
-  const docAsset = certificate?.documentPath || certificate?.localAssetUrl;
-  const isImageDoc = certificate?.imageUrl || (docAsset && (docAsset.endsWith('.png') || docAsset.endsWith('.jpg') || docAsset.endsWith('.jpeg') || docAsset.endsWith('.svg')));
+  const docAsset = certificate?.pdfUrl || certificate?.documentPath || certificate?.localAssetUrl;
+  const imageAsset =
+    certificate?.image ||
+    certificate?.imageUrl ||
+    (docAsset && /\.(png|jpe?g|svg|webp)$/i.test(docAsset) ? docAsset : undefined);
 
   return (
     <AnimatePresence>
@@ -82,13 +85,13 @@ export function CertificateModal({ certificate, onClose }: CertificateModalProps
 
             {/* Certificate Hero Preview Box */}
             <div className="relative w-full h-48 sm:h-56 rounded-t-2xl overflow-hidden bg-slate-900 border-b border-slate-800 flex flex-col items-center justify-center p-6 text-center group">
-              {isImageDoc ? (
+              {imageAsset ? (
                 <Image
                   alt={certificate.title}
                   className="object-contain p-4"
                   fill
                   sizes="(max-width: 640px) 100vw, 480px"
-                  src={certificate.imageUrl || docAsset!}
+                  src={imageAsset}
                 />
               ) : (
                 <div className="flex flex-col items-center gap-3">

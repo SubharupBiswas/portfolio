@@ -31,11 +31,14 @@ export interface Certificate {
   expiryDate?: string;
   credentialId?: string;
   category: string;
+  image?: string;
   imageUrl?: string;
+  pdfUrl?: string;
   url?: string;
   credentialUrl?: string;
   localAssetUrl?: string;
   documentPath?: string;
+  description?: string;
   tags?: string[];
 }
 
@@ -82,8 +85,31 @@ export interface Bio {
   availableForWork: boolean;
   availabilityLabel: string;
   email: string;
+  phone?: string;
   resumeUrl?: string;
   avatarUrl?: string;
+}
+
+export interface ExperienceItem {
+  id?: string;
+  role: string;
+  organization: string;
+  location?: string;
+  period: string;
+  description: string;
+}
+
+export interface EducationItem {
+  id?: string;
+  institution: string;
+  degree: string;
+  period: string;
+  location?: string;
+}
+
+export interface LanguageItem {
+  language: string;
+  fluency: string;
 }
 
 export interface PortfolioData {
@@ -92,4 +118,7 @@ export interface PortfolioData {
   certificates: Certificate[];
   projects: Project[];
   socialLinks: SocialLink[];
+  experience?: ExperienceItem[];
+  education?: EducationItem[];
+  languages?: LanguageItem[];
 }
