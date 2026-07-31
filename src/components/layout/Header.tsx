@@ -53,13 +53,13 @@ export function Header() {
           <nav className="flex items-center justify-between h-16 sm:h-18">
             {/* Logo */}
             <Link className="flex items-center gap-2.5 group cursor-pointer" href="/">
-              <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden ring-2 ring-sky-500/30 group-hover:ring-sky-500 transition-all duration-300 shrink-0">
+              <div className="relative w-8 h-8 rounded-full overflow-hidden shrink-0 ring-2 ring-sky-500/30">
                 <Image
                   alt="Subharup Biswas Emblem"
                   className="object-cover"
                   fill
                   priority
-                  sizes="36px"
+                  sizes="32px"
                   src="/favicon.png"
                 />
               </div>

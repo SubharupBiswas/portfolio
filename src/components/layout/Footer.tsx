@@ -30,7 +30,7 @@ export function Footer() {
           {/* Left: Branding + copyright */}
           <div className="flex flex-col items-center sm:items-start gap-1">
             <Link className="flex items-center gap-2.5 group cursor-pointer" href="/">
-              <div className="relative w-8 h-8 rounded-full overflow-hidden ring-2 ring-sky-500/30 group-hover:ring-sky-500 transition-all shrink-0">
+              <div className="relative w-8 h-8 rounded-full overflow-hidden shrink-0 ring-2 ring-sky-500/30">
                 <Image alt="Subharup Biswas Emblem" className="object-cover" fill sizes="32px" src="/favicon.png" />
               </div>
               <span className="font-extrabold text-base text-slate-900 dark:text-white tracking-tight">
