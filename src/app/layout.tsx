@@ -36,9 +36,14 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Subharup Biswas' }],
   icons: {
-    icon: '/favicon.png',
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.png', type: 'image/png' },
+    ],
     shortcut: '/favicon.png',
-    apple: '/favicon.png',
+    apple: [
+      { url: '/favicon.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
   openGraph: {
     title: 'Subharup Biswas — Full-Stack Developer & Security Researcher',

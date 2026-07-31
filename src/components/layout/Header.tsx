@@ -55,10 +55,10 @@ export function Header() {
               href="/"
               className="flex items-center gap-2.5 group cursor-pointer"
             >
-              <div className="w-8 h-8 rounded-xl bg-emerald-600 dark:bg-emerald-500 flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform duration-300">
+              <div className="w-8 h-8 rounded-xl bg-sky-600 dark:bg-sky-500 flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform duration-300">
                 <span className="font-mono font-bold text-sm text-white">S</span>
               </div>
-              <span className="font-bold text-slate-900 dark:text-zinc-100 text-sm sm:text-base group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors duration-200">
+              <span className="font-bold text-slate-900 dark:text-zinc-100 text-sm sm:text-base group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors duration-200">
                 Subharup.com
               </span>
             </Link>
@@ -79,14 +79,14 @@ export function Header() {
                     className={cn(
                       'relative flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 cursor-pointer',
                       isActive
-                        ? 'text-emerald-700 dark:text-emerald-300 font-bold'
+                        ? 'text-sky-700 dark:text-sky-300 font-bold'
                         : 'text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-zinc-100 hover:bg-slate-200/50 dark:hover:bg-zinc-800/40'
                     )}
                   >
                     {isActive && (
                       <motion.span
                         layoutId="nav-active"
-                        className="absolute inset-0 bg-emerald-500/10 dark:bg-emerald-500/15 rounded-full border border-emerald-500/30"
+                        className="absolute inset-0 bg-sky-500/10 dark:bg-sky-500/15 rounded-full border border-sky-500/30"
                         transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                       />
                     )}
@@ -163,7 +163,7 @@ export function Header() {
                     className={cn(
                       'flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm font-medium transition-colors cursor-pointer',
                       isActive
-                        ? 'text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-500/15 border border-emerald-200 dark:border-emerald-500/20 font-bold'
+                        ? 'text-sky-700 dark:text-sky-300 bg-sky-50 dark:bg-sky-500/15 border border-sky-200 dark:border-sky-500/20 font-bold'
                         : 'text-slate-700 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-zinc-100 hover:bg-slate-200/50 dark:hover:bg-zinc-800/60'
                     )}
                   >

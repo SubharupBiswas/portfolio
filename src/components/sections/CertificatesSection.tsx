@@ -10,30 +10,34 @@ import { FadeUp } from '@/components/ui/AnimatedText';
 import type { Certificate, CertificateCategory } from '@/types/portfolio';
 import { cn } from '@/lib/utils';
 
-const CATEGORIES: CertificateCategory[] = [
-  'Cybersecurity & Forensics',
-  'Cloud & Systems',
-  'Professional Certifications',
-];
+interface CertificatesSectionProps {
+  limit?: number;
+}
 
-export function CertificatesSection() {
+export function CertificatesSection({ limit }: CertificatesSectionProps) {
   const { certificates } = usePortfolio();
-  const [activeCategory, setActiveCategory] = useState<CertificateCategory | 'All'>('All');
+  const [activeCategory, setActiveCategory] = useState<string>('All');
   const [search, setSearch] = useState('');
   const [selectedCert, setSelectedCert] = useState<Certificate | null>(null);
 
+  const categories = useMemo(() => {
+    const set = new Set(certificates.map((c) => c.category).filter(Boolean));
+    return ['All', ...Array.from(set)];
+  }, [certificates]);
+
   const filtered = useMemo(() => {
-    return certificates.filter((c) => {
+    const list = certificates.filter((c) => {
       const matchCategory = activeCategory === 'All' || c.category === activeCategory;
       const q = search.toLowerCase();
       const matchSearch =
         !search ||
         c.title.toLowerCase().includes(q) ||
         c.issuer.toLowerCase().includes(q) ||
-        c.tags.some((t) => t.includes(q));
+        c.tags?.some((t) => t.includes(q));
       return matchCategory && matchSearch;
     });
-  }, [certificates, activeCategory, search]);
+    return limit && limit > 0 ? list.slice(0, limit) : list;
+  }, [certificates, activeCategory, search, limit]);
 
   return (
     <section id="certificates" className="section-padding">
@@ -73,10 +77,10 @@ export function CertificatesSection() {
 
             {/* Categories */}
             <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
-              {(['All', ...CATEGORIES] as const).map((cat) => (
+              {categories.map((cat) => (
                 <button
                   key={cat}
-                  onClick={() => setActiveCategory(cat as any)}
+                  onClick={() => setActiveCategory(cat)}
                   className={cn(
                     'px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all shrink-0 cursor-pointer',
                     activeCategory === cat
@@ -84,9 +88,7 @@ export function CertificatesSection() {
                       : 'bg-zinc-900/60 text-zinc-400 hover:text-zinc-200 border border-zinc-800/80'
                   )}
                 >
-                  {cat === 'All' ? 'All' :
-                   cat === 'Cybersecurity & Forensics' ? '🛡️ Security' :
-                   cat === 'Cloud & Systems' ? '☁️ Cloud' : '📜 Professional'}
+                  {cat}
                 </button>
               ))}
             </div>

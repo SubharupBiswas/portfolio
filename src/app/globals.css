@@ -3,25 +3,25 @@
 
 /* ─── Design Tokens (CSS Custom Properties) ─────────────────────── */
 :root {
-  /* Light theme: Slate/Zinc high contrast base with Emerald/Teal accents */
+  /* Light theme: Crisp Ice Blue / Slate high contrast base with Sapphire/Sky accents */
   --bg-main: #f8fafc;        /* slate-50 */
   --surface: #ffffff;        /* white */
   --border-color: #e2e8f0;   /* slate-200 */
   --text-main: #0f172a;      /* slate-900 */
-  --text-sub: #475569;       /* slate-600 */
-  --accent-primary: #059669; /* emerald-600 */
-  --accent-secondary: #0d9488; /* teal-600 */
+  --text-sub: #334155;       /* slate-700 */
+  --accent-primary: #0284c7; /* sky-600 */
+  --accent-secondary: #2563eb; /* blue-600 */
 }
 
 .dark {
-  /* Dark theme: Deep Zinc background with crisp white text & Emerald accents */
+  /* Dark theme: Midnight Ocean background with crisp white text & Cyan-Blue accents */
   --bg-main: #09090b;        /* zinc-950 */
   --surface: #18181b;        /* zinc-900 */
   --border-color: #27272a;   /* zinc-800 */
   --text-main: #f4f4f5;      /* zinc-100 */
-  --text-sub: #a1a1aa;       /* zinc-400 */
-  --accent-primary: #10b981; /* emerald-500 */
-  --accent-secondary: #14b8a6; /* teal-500 */
+  --text-sub: #cbd5e1;       /* slate-300 */
+  --accent-primary: #38bdf8; /* sky-400 */
+  --accent-secondary: #60a5fa; /* blue-400 */
 }
 
 /* ─── Global Resets ──────────────────────────────────────────────── */
@@ -55,22 +55,22 @@ body {
   @apply bg-slate-300 dark:bg-zinc-700 rounded-full;
 }
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-emerald-600 dark:bg-emerald-500;
+  @apply bg-sky-600 dark:bg-sky-400;
 }
 
 /* ─── Selection Color ────────────────────────────────────────────── */
 ::selection {
-  background: rgba(16, 185, 129, 0.2);
-  color: #047857;
+  background: rgba(2, 132, 199, 0.2);
+  color: #0369a1;
 }
 .dark ::selection {
-  background: rgba(16, 185, 129, 0.3);
-  color: #a7f3d0;
+  background: rgba(56, 189, 248, 0.25);
+  color: #bae6fd;
 }
 
 /* ─── Focus Ring ─────────────────────────────────────────────────── */
 :focus-visible {
-  outline: 2px solid #10b981;
+  outline: 2px solid #0284c7;
   outline-offset: 2px;
   border-radius: 6px;
 }
@@ -103,16 +103,16 @@ body {
            shadow-xs dark:shadow-none transition-all duration-300;
   }
   .card-hover {
-    @apply hover:border-emerald-500/50 dark:hover:border-emerald-500/40
+    @apply hover:border-sky-500/50 dark:hover:border-sky-400/40
            hover:bg-white dark:hover:bg-zinc-900
-           hover:shadow-lg hover:shadow-emerald-500/5 dark:hover:shadow-none;
+           hover:shadow-lg hover:shadow-sky-500/5 dark:hover:shadow-none;
   }
 
   /* Button Base */
   .btn-primary {
     @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm
-           bg-emerald-600 text-white border border-emerald-600 shadow-sm
-           hover:bg-emerald-700 dark:hover:bg-emerald-500
+           bg-sky-600 text-white border border-sky-600 shadow-sm
+           hover:bg-sky-700 dark:hover:bg-sky-500
            active:scale-95 transition-all duration-200 cursor-pointer;
   }
   .btn-secondary {
@@ -136,22 +136,22 @@ body {
            border border-slate-200 dark:border-zinc-700/60;
   }
   .tag-active {
-    @apply bg-emerald-50 dark:bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-500/30;
+    @apply bg-sky-50 dark:bg-sky-500/15 text-sky-800 dark:text-sky-300 border-sky-200 dark:border-sky-500/30;
   }
   .tag-cyan {
-    @apply bg-sky-50 dark:bg-sky-500/15 text-sky-800 dark:text-sky-300 border-sky-200 dark:border-sky-500/30;
+    @apply bg-blue-50 dark:bg-blue-500/15 text-blue-800 dark:text-blue-300 border-blue-200 dark:border-blue-500/30;
   }
 
   /* Section Title & Subtitle */
   .section-eyebrow {
     @apply inline-flex items-center gap-2 text-xs font-mono font-semibold
-           text-emerald-600 dark:text-emerald-400 uppercase tracking-widest mb-4;
+           text-sky-600 dark:text-sky-400 uppercase tracking-widest mb-4;
   }
   .section-title {
     @apply text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-zinc-100 leading-tight mb-4;
   }
   .section-subtitle {
-    @apply text-base sm:text-lg text-slate-600 dark:text-zinc-400 max-w-2xl leading-relaxed;
+    @apply text-base sm:text-lg text-slate-700 dark:text-zinc-300 max-w-2xl leading-relaxed;
   }
 }
 

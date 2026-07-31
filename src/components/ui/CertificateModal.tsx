@@ -110,11 +110,13 @@ export function CertificateModal({ certificate, onClose }: CertificateModalProps
                 </div>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-1.5 mt-3">
-                  {certificate.tags.map((tag) => (
-                    <span key={tag} className="tag">{tag}</span>
-                  ))}
-                </div>
+                {certificate.tags && certificate.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-1.5 mt-3">
+                    {certificate.tags.map((tag) => (
+                      <span key={tag} className="tag">{tag}</span>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Metadata grid */}
@@ -148,9 +150,9 @@ export function CertificateModal({ certificate, onClose }: CertificateModalProps
 
               {/* Action buttons */}
               <div className="flex flex-col sm:flex-row gap-2.5 w-full">
-                {certificate.url && (
+                {(certificate.credentialUrl || certificate.url) && (
                   <a
-                    href={certificate.url}
+                    href={certificate.credentialUrl || certificate.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary justify-center flex-1"
@@ -159,9 +161,9 @@ export function CertificateModal({ certificate, onClose }: CertificateModalProps
                     Verify Credential
                   </a>
                 )}
-                {certificate.localAssetUrl && (
+                {(certificate.documentPath || certificate.localAssetUrl) && (
                   <a
-                    href={certificate.localAssetUrl}
+                    href={certificate.documentPath || certificate.localAssetUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-secondary justify-center flex-1"

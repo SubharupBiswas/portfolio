@@ -11,32 +11,26 @@ import { FadeUp } from '@/components/ui/AnimatedText';
 import { usePortfolio } from '@/context/PortfolioContext';
 import type { Certificate } from '@/types/portfolio';
 
-const CERT_CATEGORIES = [
-  'All',
-  'Cybersecurity & Forensics',
-  'Cloud & Systems',
-  'Professional Certifications',
-] as const;
-
 export default function CertificatesPage() {
   const { certificates } = usePortfolio();
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [search, setSearch] = useState('');
   const [activeModalCert, setActiveModalCert] = useState<Certificate | null>(null);
 
+  const categories = React.useMemo(() => {
+    const set = new Set(certificates.map((c) => c.category).filter(Boolean));
+    return ['All', ...Array.from(set)];
+  }, [certificates]);
+
   const filteredCerts = certificates.filter((c) => {
-    const catMatch =
-      selectedCategory === 'All' ||
-      c.category === selectedCategory ||
-      (selectedCategory === 'Cybersecurity & Forensics' && c.category === 'Cybersecurity') ||
-      (selectedCategory === 'Cloud & Systems' && c.category === 'Systems');
+    const catMatch = selectedCategory === 'All' || c.category === selectedCategory;
 
     const searchMatch =
       !search ||
       c.title.toLowerCase().includes(search.toLowerCase()) ||
       c.issuer.toLowerCase().includes(search.toLowerCase()) ||
       c.credentialId?.toLowerCase().includes(search.toLowerCase()) ||
-      c.tags.some((t) => t.toLowerCase().includes(search.toLowerCase()));
+      c.tags?.some((t) => t.toLowerCase().includes(search.toLowerCase()));
 
     return catMatch && searchMatch;
   });
@@ -51,7 +45,7 @@ export default function CertificatesPage() {
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
               <div>
                 <p className="section-eyebrow">
-                  <span className="w-6 h-px bg-emerald-500" />
+                  <span className="w-6 h-px bg-sky-500" />
                   Credentials Vault
                 </p>
                 <h1 className="section-title">Verified Certifications</h1>
@@ -67,13 +61,13 @@ export default function CertificatesPage() {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10 pb-6 border-b border-slate-200 dark:border-zinc-800">
               {/* Category Pills */}
               <div className="flex items-center gap-1.5 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
-                {CERT_CATEGORIES.map((cat) => (
+                {categories.map((cat) => (
                   <button
                     key={cat}
                     onClick={() => setSelectedCategory(cat)}
                     className={`px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
                       selectedCategory === cat
-                        ? 'bg-emerald-600 text-white border border-emerald-600 shadow-xs'
+                        ? 'bg-sky-600 text-white border border-sky-600 shadow-xs'
                         : 'bg-slate-100 dark:bg-zinc-800/80 text-slate-700 dark:text-zinc-300 border border-slate-200 dark:border-zinc-700/60 hover:bg-slate-200 dark:hover:bg-zinc-700'
                     }`}
                   >
@@ -90,7 +84,7 @@ export default function CertificatesPage() {
                   placeholder="Search by title, issuer, tag..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 rounded-xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 text-slate-900 dark:text-zinc-100 placeholder-slate-400 dark:placeholder-zinc-500 text-xs focus:border-emerald-500 focus:outline-none transition-colors"
+                  className="w-full pl-10 pr-4 py-2 rounded-xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 text-slate-900 dark:text-zinc-100 placeholder-slate-400 dark:placeholder-zinc-500 text-xs focus:border-sky-500 focus:outline-none transition-colors"
                 />
               </div>
             </div>

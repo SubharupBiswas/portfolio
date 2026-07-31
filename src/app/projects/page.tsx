@@ -43,7 +43,7 @@ export default function ProjectsPage() {
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
               <div>
                 <p className="section-eyebrow">
-                  <span className="w-6 h-px bg-emerald-500" />
+                  <span className="w-6 h-px bg-sky-500" />
                   Work &amp; Case Studies
                 </p>
                 <h1 className="section-title">Projects Showcase</h1>
@@ -67,7 +67,7 @@ export default function ProjectsPage() {
                   placeholder="Filter projects or tech stack..."
                   className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800
                              text-slate-900 dark:text-zinc-100 placeholder-slate-400 dark:placeholder-zinc-500 text-xs
-                             focus:border-emerald-500 focus:outline-none transition-colors"
+                             focus:border-sky-500 focus:outline-none transition-colors"
                 />
               </div>
 
@@ -80,7 +80,7 @@ export default function ProjectsPage() {
                     className={cn(
                       'px-4 py-2 rounded-full text-xs font-semibold border transition-all duration-200 cursor-pointer',
                       activeCategory === cat
-                        ? 'bg-emerald-600 text-white border-emerald-600 shadow-xs'
+                        ? 'bg-sky-600 text-white border-sky-600 shadow-xs'
                         : 'bg-slate-100 dark:bg-zinc-800/80 text-slate-700 dark:text-zinc-300 border-slate-200 dark:border-zinc-700/60 hover:bg-slate-200 dark:hover:bg-zinc-700'
                     )}
                   >

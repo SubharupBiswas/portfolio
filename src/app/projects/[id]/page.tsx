@@ -11,6 +11,12 @@ interface ProjectDetailPageProps {
   params: Promise<{ id: string }>;
 }
 
+export function generateStaticParams() {
+  return (defaultData.projects || []).map((project) => ({
+    id: String(project.id),
+  }));
+}
+
 export async function generateMetadata(props: ProjectDetailPageProps) {
   const { id } = await props.params;
   const project = defaultData.projects.find((p) => p.id === id);
@@ -38,7 +44,7 @@ export default async function ProjectDetailPage(props: ProjectDetailPageProps) {
           {/* Back link */}
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 text-xs font-mono text-slate-600 dark:text-zinc-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors mb-8 group"
+            className="inline-flex items-center gap-2 text-xs font-mono text-slate-600 dark:text-zinc-400 hover:text-sky-700 dark:hover:text-sky-300 transition-colors mb-8 group"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             Back to All Projects
@@ -60,7 +66,7 @@ export default async function ProjectDetailPage(props: ProjectDetailPageProps) {
             </h1>
 
             {project.tagline && (
-              <p className="text-lg sm:text-xl font-semibold text-emerald-700 dark:text-emerald-400 font-mono">
+              <p className="text-lg sm:text-xl font-semibold text-sky-700 dark:text-sky-400 font-mono">
                 {project.tagline}
               </p>
             )}
@@ -101,7 +107,7 @@ export default async function ProjectDetailPage(props: ProjectDetailPageProps) {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-14">
               {project.metrics.map((m) => (
                 <div key={m.label} className="card-base p-5">
-                  <p className="text-2xl sm:text-3xl font-extrabold text-emerald-700 dark:text-emerald-400 font-mono">
+                  <p className="text-2xl sm:text-3xl font-extrabold text-sky-700 dark:text-sky-400 font-mono">
                     {m.value}
                   </p>
                   <p className="text-xs font-mono text-slate-500 dark:text-zinc-500 mt-1">{m.label}</p>
@@ -119,7 +125,7 @@ export default async function ProjectDetailPage(props: ProjectDetailPageProps) {
               {/* Problem & Solution */}
               {project.problemStatement && (
                 <div className="card-base p-6 sm:p-8 space-y-4">
-                  <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400">
+                  <div className="flex items-center gap-2 text-sky-700 dark:text-sky-400">
                     <Terminal className="w-5 h-5" />
                     <h2 className="text-lg font-bold text-slate-900 dark:text-zinc-100">Problem &amp; Challenge</h2>
                   </div>
@@ -176,7 +182,7 @@ export default async function ProjectDetailPage(props: ProjectDetailPageProps) {
                       <span>→</span>
                       <span>[DATA STORAGE]</span>
                     </div>
-                    <p className="text-emerald-400 font-semibold">WebCrypto AES-256-GCM / PBKDF2 HMAC-SHA256</p>
+                    <p className="text-sky-400 font-semibold">WebCrypto AES-256-GCM / PBKDF2 HMAC-SHA256</p>
                     <p className="text-zinc-400 mt-1">Zero-Knowledge Blind Ciphertext Storage Engine</p>
                   </div>
                 </div>
@@ -189,7 +195,7 @@ export default async function ProjectDetailPage(props: ProjectDetailPageProps) {
 
               {/* Tech Stack Box */}
               <div className="card-base p-6 space-y-4">
-                <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400">
+                <div className="flex items-center gap-2 text-sky-700 dark:text-sky-400">
                   <Cpu className="w-5 h-5" />
                   <h3 className="text-base font-bold text-slate-900 dark:text-zinc-100">Technologies Used</h3>
                 </div>
@@ -209,7 +215,7 @@ export default async function ProjectDetailPage(props: ProjectDetailPageProps) {
                   <ul className="space-y-2">
                     {project.keyFeatures.map((feat) => (
                       <li key={feat} className="flex items-start gap-2 text-xs text-slate-600 dark:text-zinc-400">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 mt-1.5" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-sky-500 shrink-0 mt-1.5" />
                         <span>{feat}</span>
                       </li>
                     ))}

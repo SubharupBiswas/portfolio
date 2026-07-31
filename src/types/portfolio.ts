@@ -30,11 +30,13 @@ export interface Certificate {
   issueDate: string;
   expiryDate?: string;
   credentialId?: string;
-  category: CertificateCategory;
+  category: string;
   imageUrl?: string;
   url?: string;
+  credentialUrl?: string;
   localAssetUrl?: string;
-  tags: string[];
+  documentPath?: string;
+  tags?: string[];
 }
 
 export type ProjectCategory =

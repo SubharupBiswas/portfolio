@@ -46,7 +46,7 @@ export default function SkillsPage() {
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
               <div>
                 <p className="section-eyebrow">
-                  <span className="w-6 h-px bg-emerald-500" />
+                  <span className="w-6 h-px bg-sky-500" />
                   Technical Stack
                 </p>
                 <h1 className="section-title">Skills Matrix</h1>
@@ -68,7 +68,7 @@ export default function SkillsPage() {
                     onClick={() => setSelectedCategory(cat)}
                     className={`px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
                       selectedCategory === cat
-                        ? 'bg-emerald-600 text-white border border-emerald-600 shadow-xs'
+                        ? 'bg-sky-600 text-white border border-sky-600 shadow-xs'
                         : 'bg-slate-100 dark:bg-zinc-800/80 text-slate-700 dark:text-zinc-300 border border-slate-200 dark:border-zinc-700/60 hover:bg-slate-200 dark:hover:bg-zinc-700'
                     }`}
                   >
@@ -85,7 +85,7 @@ export default function SkillsPage() {
                   placeholder="Filter by skill or tag..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 rounded-xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 text-slate-900 dark:text-zinc-100 placeholder-slate-400 dark:placeholder-zinc-500 text-xs focus:border-emerald-500 focus:outline-none transition-colors"
+                  className="w-full pl-10 pr-4 py-2 rounded-xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 text-slate-900 dark:text-zinc-100 placeholder-slate-400 dark:placeholder-zinc-500 text-xs focus:border-sky-500 focus:outline-none transition-colors"
                 />
               </div>
             </div>

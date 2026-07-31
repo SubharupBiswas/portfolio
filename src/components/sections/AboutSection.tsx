@@ -5,14 +5,14 @@ import { Code2, MapPin, Shield, Zap } from 'lucide-react';
 import { usePortfolio } from '@/context/PortfolioContext';
 import { FadeUp } from '@/components/ui/AnimatedText';
 
-const STATS = [
-  { icon: <Code2 className="w-5 h-5" />, value: '50+', label: 'Projects Built' },
-  { icon: <Shield className="w-5 h-5" />, value: '9+', label: 'Certifications' },
-  { icon: <Zap className="w-5 h-5" />, value: '5+', label: 'Years Experience' },
-];
-
 export function AboutSection() {
-  const { bio } = usePortfolio();
+  const { bio, projects, certificates, skills } = usePortfolio();
+
+  const stats = [
+    { icon: <Code2 className="w-5 h-5" />, value: `${projects.length}+`, label: 'Featured Projects' },
+    { icon: <Shield className="w-5 h-5" />, value: `${certificates.length}+`, label: 'Verified Certifications' },
+    { icon: <Zap className="w-5 h-5" />, value: `${skills.length}+`, label: 'Technical Competencies' },
+  ];
 
   return (
     <section id="about" className="section-padding relative">
@@ -66,7 +66,7 @@ export function AboutSection() {
 
           {/* ─── Stats Column ──────────────────────────────────── */}
           <div className="flex flex-col gap-4">
-            {STATS.map((stat, i) => (
+            {stats.map((stat, i) => (
               <FadeUp key={stat.label} delay={i * 0.1}>
                 <div className="card-base card-hover p-6 flex items-center gap-6 group">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500/20 transition-colors">
