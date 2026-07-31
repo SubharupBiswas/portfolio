@@ -26,7 +26,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       aria-label="Toggle theme"
       title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
       className={cn(
-        'relative p-2.5 rounded-xl transition-all duration-300 cursor-pointer',
+        'relative min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl transition-all duration-300 cursor-pointer',
         'bg-slate-200/60 dark:bg-zinc-800/60 border border-slate-300/60 dark:border-zinc-700/50',
         'text-slate-700 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white',
         'hover:shadow-md hover:scale-105 active:scale-95',

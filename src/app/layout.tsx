@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { PortfolioProvider } from '@/context/PortfolioContext';
 import { ThemeProvider } from '@/components/theme-provider';
+import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -17,6 +18,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://subharup.com'),
   title: 'Subharup Biswas — Full-Stack Developer & Security Researcher',
   description:
     'Portfolio of Subharup Biswas — Full-Stack Developer, Security Researcher, and Systems Engineer. Building secure, high-performance digital experiences with Next.js 16, Cloudflare Workers, and modern web architectures.',
@@ -61,6 +63,29 @@ export const viewport = {
   ],
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Subharup Biswas',
+  url: 'https://subharup.com',
+  jobTitle: 'Full-Stack Developer & Security Researcher',
+  sameAs: [
+    'https://github.com/SubharupBiswas',
+    'https://linkedin.com/in/subharupbiswas',
+    'https://www.credly.com/users/subharupbiswas',
+    'https://twitter.com/subharup',
+  ],
+  knowsAbout: [
+    'Next.js',
+    'React',
+    'TypeScript',
+    'Cybersecurity',
+    'Cloudflare Workers',
+    'Systems Engineering',
+    'Network Telemetry',
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -68,7 +93,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className="font-sans antialiased bg-slate-50 dark:bg-zinc-950 text-slate-900 dark:text-zinc-100 min-h-dvh flex flex-col transition-colors duration-300">
+      <body className="font-sans antialiased bg-slate-50 dark:bg-zinc-950 text-slate-900 dark:text-zinc-100 min-h-dvh flex flex-col overflow-x-hidden transition-colors duration-300">
+        <GoogleAnalytics GA_MEASUREMENT_ID="G-MWH662KTSF" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <PortfolioProvider>{children}</PortfolioProvider>
         </ThemeProvider>
