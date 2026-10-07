@@ -110,13 +110,13 @@ body {
 
   /* Button Base */
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 min-h-12 rounded-xl font-semibold text-sm
            bg-sky-600 text-white border border-sky-600 shadow-sm
            hover:bg-sky-700 dark:hover:bg-sky-500
            active:scale-95 transition-all duration-200 cursor-pointer;
   }
   .btn-secondary {
-    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 min-h-12 rounded-xl font-semibold text-sm
            bg-slate-100 dark:bg-zinc-800 text-slate-800 dark:text-zinc-100
            border border-slate-200 dark:border-zinc-700
            hover:bg-slate-200/80 dark:hover:bg-zinc-700 hover:border-slate-300 dark:hover:border-zinc-600

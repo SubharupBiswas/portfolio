@@ -5,12 +5,24 @@ export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://subharup.com';
-  const routes = ['', '/skills', '/projects', '/certificates', '/contact'];
+  const lastModified = new Date().toISOString();
 
-  return routes.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: route === '' ? 'weekly' : 'monthly',
-    priority: route === '' ? 1.0 : 0.8,
+  const routes: MetadataRoute.Sitemap = ['', '/projects', '/certificates', '/skills', '/contact'].map(
+    (route) => ({
+      url: `${baseUrl}${route}`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: route === '' ? 1.0 : 0.8,
+    })
+  );
+
+  // Derived from portfolio.json so new projects are always listed with their canonical URL.
+  const projectRoutes: MetadataRoute.Sitemap = (portfolioData.projects || []).map((project) => ({
+    url: `${baseUrl}/projects/${project.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
   }));
+
+  return [...routes, ...projectRoutes];
 }

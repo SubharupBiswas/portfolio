@@ -120,7 +120,7 @@ export default function ContactPage() {
             <span>Edge AI Response</span>
           </div>
           <p className="text-xs text-zinc-200 leading-relaxed">
-            Subharup Biswas is a Full-Stack Engineer and Security Researcher specializing in Next.js 16, Cloudflare Edge architectures, and Cybersecurity. Regarding &quot;{query}&quot;: Subharup builds secure, high-performance web applications and maintains 11 verified accreditations across Cisco CCNA, Python, and AI systems.
+            Subharup Biswas is a Full-Stack Software Engineer &amp; Systems Builder specializing in Next.js 16, TypeScript, Cloudflare Edge architectures, and Distributed Systems. Regarding &quot;{query}&quot;: Subharup builds robust, high-performance web applications and maintains 11 verified accreditations across Cisco CCNA, Python, and AI systems.
           </p>
         </div>
       );
@@ -254,7 +254,7 @@ export default function ContactPage() {
               </p>
               <h1 className="section-title">Get In Touch</h1>
               <p className="section-subtitle">
-                Have a project idea, security audit request, or architecture question? Send a message or explore the interactive developer CLI.
+                Have an engineering opportunity, technical collaboration idea, or systems architecture question? Send a message or explore the interactive developer CLI.
               </p>
             </div>
           </FadeUp>
@@ -308,7 +308,7 @@ export default function ContactPage() {
                       type="text"
                       value={form.subject}
                       onChange={handleChange}
-                      placeholder="Project inquiry, security audit..."
+                      placeholder="Software engineering role, collaboration..."
                       className={inputClass('subject')}
                     />
                     {errors.subject && <p className="text-xs text-red-500 mt-1">{errors.subject}</p>}

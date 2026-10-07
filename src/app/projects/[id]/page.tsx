@@ -6,6 +6,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import defaultData from '@/data/portfolio.json';
 import type { Project } from '@/types/portfolio';
+import { pageOpenGraph } from '@/lib/seo';
 
 interface ProjectDetailPageProps {
   params: Promise<{ id: string }>;
@@ -21,9 +22,15 @@ export async function generateMetadata(props: ProjectDetailPageProps) {
   const { id } = await props.params;
   const project = defaultData.projects.find((p) => p.id === id);
   if (!project) return { title: 'Project Not Found' };
+  const title = `${project.title} — Case Study | Subharup Biswas`;
+  const path = `/projects/${project.id}`;
   return {
-    title: `${project.title} — Case Study | Subharup.com`,
+    title: { absolute: title },
     description: project.description,
+    alternates: {
+      canonical: path,
+    },
+    openGraph: pageOpenGraph({ title, description: project.description, path }),
   };
 }
 

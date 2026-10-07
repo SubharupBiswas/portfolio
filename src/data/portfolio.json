@@ -1,18 +1,20 @@
 {
   "bio": {
     "name": "Subharup Biswas",
-    "tagline": "Founder & Lead Engineer at SB WebWorks",
+    "tagline": "Full-Stack Software Engineer & Systems Builder",
     "roles": [
-      "Founder @ SB WebWorks",
-      "Full-Stack Developer",
-      "Security Researcher",
-      "Systems Engineer"
+      "Full-Stack Engineer",
+      "Systems & Cloud Builder",
+      "Software Development Engineer",
+      "Network & Security Engineer",
+      "Distributed Systems Builder",
+      "Open Source Contributor"
     ],
-    "description": "Founder & Lead Engineer at SB WebWorks, building resilient web applications and developer tools. Computer Science & Engineering (Cyber Security) undergraduate from Techno Main Salt Lake (Graduating 2027) passionate about cybersecurity, ethical hacking, and secure software development.",
+    "description": "B.Tech CSE (Cyber Security) undergraduate at Techno Main Salt Lake (Graduating 2027) passionate about architecting robust, high-performance web applications and distributed systems. Experienced in modern full-stack engineering with Next.js and TypeScript, computer networking, edge computing runtimes, and resilient cloud architectures.",
     "location": "Kolkata, West Bengal, India",
     "phone": "+91 6289925694",
     "availableForWork": true,
-    "availabilityLabel": "Open for Projects",
+    "availabilityLabel": "Available for SDE Roles (2027 Grad)",
     "email": "contact@subharup.com",
     "resumeUrl": "/Profile.pdf",
     "avatarUrl": "/dp.webp"

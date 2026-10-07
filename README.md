@@ -4,7 +4,7 @@
 
   # Subharup Biswas — Developer Portfolio
 
-  **Full-Stack Engineer · Cybersecurity Researcher · Systems Developer**
+  **Full-Stack Software Engineer · Systems Builder · Distributed Systems**
 
   [![Live Portfolio](https://img.shields.io/badge/Website-subharup.com-0284c7?style=for-the-badge&logo=googlechrome&logoColor=white)](https://subharup.com)
   [![Next.js 16](https://img.shields.io/badge/Next.js-16-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)

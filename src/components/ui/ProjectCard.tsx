@@ -10,12 +10,12 @@ import { cn } from '@/lib/utils';
 const CATEGORY_STYLES: Record<string, { headerBg: string; badge: string }> = {
   // Web
   'Web App': {
-    headerBg: 'bg-emerald-50/80 dark:bg-emerald-950/30',
-    badge: 'bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-500/30',
+    headerBg: 'bg-sky-50/80 dark:bg-sky-950/30',
+    badge: 'bg-sky-100 dark:bg-sky-500/20 text-sky-800 dark:text-sky-300 border-sky-200 dark:border-sky-500/30',
   },
   'Web Dev': {
-    headerBg: 'bg-emerald-50/80 dark:bg-emerald-950/30',
-    badge: 'bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-500/30',
+    headerBg: 'bg-sky-50/80 dark:bg-sky-950/30',
+    badge: 'bg-sky-100 dark:bg-sky-500/20 text-sky-800 dark:text-sky-300 border-sky-200 dark:border-sky-500/30',
   },
   // Security
   'Security': {
@@ -103,12 +103,12 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
       {/* Content */}
       <div className="flex flex-col gap-3 p-5 flex-1">
-        <Link href={`/projects/${project.id}`} className="group-hover:text-emerald-700 dark:group-hover:text-emerald-300 transition-colors">
+        <Link href={`/projects/${project.id}`} className="group-hover:text-sky-700 dark:group-hover:text-sky-300 transition-colors">
           <h3 className="text-base font-bold text-slate-900 dark:text-zinc-100 leading-tight">
             {project.title}
           </h3>
           {project.tagline && (
-            <p className="text-xs font-mono text-emerald-700 dark:text-emerald-400 font-semibold mt-1">{project.tagline}</p>
+            <p className="text-xs font-mono text-sky-700 dark:text-sky-400 font-semibold mt-1">{project.tagline}</p>
           )}
         </Link>
         <p className="text-sm text-slate-600 dark:text-zinc-400 leading-relaxed flex-1 line-clamp-3">
@@ -145,7 +145,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-ghost p-1.5 text-slate-600 dark:text-zinc-400 hover:text-emerald-700 dark:hover:text-emerald-300"
+              className="btn-ghost p-1.5 text-slate-600 dark:text-zinc-400 hover:text-sky-700 dark:hover:text-sky-300"
               aria-label={`${project.title} live demo`}
             >
               <ExternalLink className="w-4 h-4" />
@@ -155,7 +155,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
         <Link
           href={`/projects/${project.id}`}
-          className="text-xs font-mono font-semibold text-emerald-700 dark:text-emerald-400 hover:underline flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+          className="text-xs font-mono font-semibold text-sky-700 dark:text-sky-400 hover:underline flex items-center gap-1 group-hover:translate-x-1 transition-transform"
         >
           Case Study <ArrowRight className="w-3.5 h-3.5" />
         </Link>

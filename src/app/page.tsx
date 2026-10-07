@@ -35,10 +35,11 @@ const SOCIAL_ICONS: Record<string, React.ReactNode> = {
 };
 
 const HERO_ROLES = [
-  'Founder @ SB WebWorks',
   'Full-Stack Engineer',
-  'Security Researcher',
-  'Systems Architect',
+  'Systems & Cloud Builder',
+  'Software Development Engineer',
+  'Network & Security Engineer',
+  'Distributed Systems Builder',
   'Open Source Contributor',
 ];
 
@@ -56,13 +57,13 @@ export default function Home() {
         {/* ─── Hero Section ─────────────────────────────────────────────── */}
         <section className="relative pt-32 pb-20 overflow-hidden flex flex-col items-center justify-center min-h-[85dvh] bg-gradient-to-b from-slate-100/80 via-slate-50 to-slate-50 dark:from-zinc-900/60 dark:via-zinc-950 dark:to-zinc-950">
 
-          {/* Subtle Ambient Lighting Blobs */}
+          {/* Subtle Ambient Lighting Blobs (Sky Blue Palette) */}
           <div
             aria-hidden
             className="orb w-[500px] h-[500px] -top-32 -left-40 opacity-20 dark:opacity-15"
             style={{
               background:
-                'radial-gradient(circle, rgba(16,185,129,0.3) 0%, rgba(13,148,136,0.15) 50%, transparent 70%)',
+                'radial-gradient(circle, rgba(14,165,233,0.25) 0%, rgba(56,189,248,0.12) 50%, transparent 70%)',
             }}
           />
           <div
@@ -70,7 +71,7 @@ export default function Home() {
             className="orb w-[450px] h-[450px] -bottom-40 -right-20 opacity-15 dark:opacity-10"
             style={{
               background:
-                'radial-gradient(circle, rgba(14,165,233,0.3) 0%, rgba(16,185,129,0.15) 50%, transparent 70%)',
+                'radial-gradient(circle, rgba(2,132,199,0.2) 0%, rgba(56,189,248,0.1) 50%, transparent 70%)',
             }}
           />
 
@@ -137,6 +138,7 @@ export default function Home() {
                 href={bio.resumeUrl || '/Profile.pdf'}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Download Resume PDF"
                 className="btn-secondary flex items-center gap-2"
               >
                 <FileText className="w-4 h-4 text-sky-600 dark:text-sky-400" />
@@ -156,7 +158,7 @@ export default function Home() {
                   target={link.url.startsWith('mailto') ? undefined : '_blank'}
                   rel="noopener noreferrer"
                   aria-label={link.platform}
-                  className="p-3 rounded-xl glass border border-slate-200 dark:border-zinc-800 text-slate-600 dark:text-zinc-400 hover:text-sky-700 dark:hover:text-sky-300 transition-all duration-200 hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center min-w-12 min-h-12 rounded-xl glass border border-slate-200 dark:border-zinc-800 text-slate-600 dark:text-zinc-400 hover:text-sky-700 dark:hover:text-sky-300 transition-all duration-200 hover:-translate-y-0.5"
                 >
                   {SOCIAL_ICONS[link.icon] ?? null}
                 </a>
@@ -165,7 +167,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ─── Asymmetric Bento Grid ─────────────────────────────────────── */}
+        {/* ─── Engineering Highlights Grid ─────────────────────────────────── */}
         <section className="py-16 relative bg-slate-50 dark:bg-zinc-950">
           <div className="section-container">
             <FadeUp>
@@ -174,7 +176,7 @@ export default function Home() {
                   <span className="w-6 h-px bg-sky-500" />
                   Overview
                 </p>
-                <h2 className="section-title">Bento Highlights</h2>
+                <h2 className="section-title">Engineering Highlights</h2>
                 <p className="section-subtitle">
                   Key snapshots of my technical background, verified credentials, and software projects.
                 </p>
@@ -214,7 +216,7 @@ export default function Home() {
                   </div>
 
                   <p className="text-sm text-slate-600 dark:text-zinc-400 leading-relaxed my-5">
-                    Founder &amp; Lead Engineer at SB WebWorks, specializing in secure cloud architecture, high-performance web applications, and digital forensics.
+                    B.Tech CSE (Cyber Security) undergraduate at Techno Main Salt Lake. Full-stack software engineer passionate about distributed systems, edge computing, network protocols, and high-performance modern web platforms.
                   </p>
 
                   <div className="flex items-center justify-between pt-4 border-t border-slate-200 dark:border-zinc-800">
@@ -303,7 +305,7 @@ export default function Home() {
                   </div>
 
                   <p className="text-xs text-slate-600 dark:text-zinc-400 mt-3">
-                    Web engineering, cloud orchestration, digital forensics &amp; security auditing.
+                    Full-stack web engineering, distributed systems, edge computing &amp; cloud infrastructure.
                   </p>
                 </div>
               </FadeUp>
@@ -373,7 +375,7 @@ export default function Home() {
         </section>
 
         {/* ─── CTA Banner ───────────────────────────────────────────────── */}
-        <section className="py-20 relative bg-slate-50 dark:bg-zinc-950">
+        <section id="contact" className="py-20 relative bg-slate-50 dark:bg-zinc-950 scroll-mt-16">
           <div className="section-container">
             <FadeUp>
               <div className="rounded-3xl bg-slate-900 dark:bg-zinc-900 border border-slate-800 dark:border-zinc-800 p-8 sm:p-14 text-center relative overflow-hidden shadow-xl">
@@ -383,10 +385,10 @@ export default function Home() {
                     <Sparkles className="w-6 h-6" />
                   </div>
                   <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-                    Have a project in mind?
+                    Let&apos;s build something remarkable
                   </h2>
                   <p className="text-base sm:text-lg text-slate-300 dark:text-zinc-400 max-w-xl mx-auto">
-                    I&apos;m available for freelance development, security audits, and systems architecture consulting.
+                    I&apos;m actively seeking software engineering internships, technical collaborations, and full-stack developer roles. Whether you have an engineering opportunity or just want to discuss distributed systems, feel free to reach out.
                   </p>
                   <div className="pt-4">
                     <Link href="/contact" className="btn-primary text-base px-8 py-3.5 shadow-lg shadow-sky-500/20">

@@ -19,26 +19,29 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://subharup.com'),
+  alternates: {
+    canonical: 'https://subharup.com',
+  },
   title: {
-    default: 'Subharup Biswas | SB WebWorks',
-    template: '%s | SB WebWorks',
+    default: 'Subharup Biswas | Full-Stack Software Engineer',
+    template: '%s | Subharup Biswas',
   },
   description:
-    'Founder & Lead Engineer at SB WebWorks. Full-Stack Developer, Security Researcher, and Systems Engineer building resilient web applications, secure digital architectures, and developer tools.',
+    'Portfolio of Subharup Biswas — B.Tech CSE (Cyber Security) undergraduate at Techno Main Salt Lake and full-stack software engineer specializing in Next.js, TypeScript, cloud infrastructure, and distributed systems.',
   keywords: [
-    'SB WebWorks',
     'Subharup Biswas',
     'Subharup',
     'portfolio',
-    'developer',
-    'security researcher',
+    'software engineer',
     'full stack',
+    'systems builder',
     'Next.js 16',
+    'TypeScript',
     'Cloudflare Workers',
-    'cybersecurity',
-    'systems engineer',
+    'distributed systems',
+    'cloud infrastructure',
   ],
-  authors: [{ name: 'Subharup Biswas' }, { name: 'SB WebWorks' }],
+  authors: [{ name: 'Subharup Biswas' }],
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -50,20 +53,32 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'Subharup Biswas | SB WebWorks',
+    title: 'Subharup Biswas | Full-Stack Software Engineer',
     description:
-      'Founder & Lead Engineer at SB WebWorks. Full-stack engineering, cybersecurity research, and resilient web applications built with Next.js and modern cloud architecture.',
+      'Explore projects, engineering case studies, and verified credentials across modern web platforms, edge computing, and cloud infrastructure.',
     url: 'https://subharup.com',
-    siteName: 'SB WebWorks',
+    siteName: 'Subharup Biswas Portfolio',
+    locale: 'en_US',
     type: 'website',
-    images: [{ url: '/favicon.png', width: 512, height: 512, alt: 'Subharup Biswas | SB WebWorks' }],
+    images: [{ url: '/favicon.png', width: 512, height: 512, alt: 'Subharup Biswas' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Subharup Biswas | SB WebWorks',
+    title: 'Subharup Biswas | Full-Stack Software Engineer',
     description:
-      'Founder & Lead Engineer at SB WebWorks. Full-stack engineering, cybersecurity research, and resilient web applications.',
+      'Explore projects, engineering case studies, and verified credentials across modern web platforms, edge computing, and cloud infrastructure.',
     images: ['/favicon.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
@@ -81,12 +96,7 @@ const jsonLd = {
   '@type': 'Person',
   name: 'Subharup Biswas',
   url: 'https://subharup.com',
-  jobTitle: 'Founder & Lead Engineer',
-  worksFor: {
-    '@type': 'Organization',
-    name: 'SB WebWorks',
-    url: 'https://subharup.com',
-  },
+  jobTitle: 'Full-Stack Software Engineer & Systems Builder',
   sameAs: [
     'https://github.com/SubharupBiswas',
     'https://linkedin.com/in/subharupbiswas',
@@ -94,11 +104,10 @@ const jsonLd = {
     'https://twitter.com/subharup',
   ],
   knowsAbout: [
-    'SB WebWorks',
     'Next.js',
     'React',
     'TypeScript',
-    'Cybersecurity',
+    'Distributed Systems',
     'Cloudflare Workers',
     'Systems Engineering',
     'Network Telemetry',
@@ -127,8 +136,7 @@ export default function RootLayout({
           as="image"
           href="/dp.webp"
           type="image/webp"
-          // @ts-expect-error fetchpriority is a valid HTML attribute
-          fetchpriority="high"
+          fetchPriority="high"
         />
       </head>
       <body className="font-sans antialiased bg-slate-50 dark:bg-zinc-950 text-slate-900 dark:text-zinc-100 min-h-dvh flex flex-col overflow-x-hidden transition-colors duration-300">

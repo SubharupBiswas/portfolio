@@ -22,7 +22,7 @@ export function SkillChip({ skill, isEditMode, onDelete }: SkillChipProps) {
       whileHover={{ y: -2 }}
       className={cn(
         'relative group card-base p-3.5 flex flex-col justify-between gap-2.5 transition-all duration-200',
-        'hover:border-emerald-500/50 hover:shadow-xs'
+        'hover:border-sky-500/50 hover:shadow-xs'
       )}
     >
       {/* Delete trigger in edit mode */}
@@ -55,7 +55,7 @@ export function SkillChip({ skill, isEditMode, onDelete }: SkillChipProps) {
               className={cn(
                 'w-1.5 h-1.5 rounded-full transition-colors duration-300',
                 dot <= skill.level
-                  ? 'bg-emerald-600 dark:bg-emerald-400'
+                  ? 'bg-sky-600 dark:bg-sky-400'
                   : 'bg-slate-200 dark:bg-zinc-800'
               )}
             />

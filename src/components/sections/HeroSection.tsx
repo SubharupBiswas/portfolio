@@ -65,10 +65,10 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.1 }}
         >
           {bio.availableForWork && (
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-emerald-500/25 text-xs font-mono text-emerald-400">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-sky-500/25 text-xs font-mono text-sky-400">
               <span className="relative flex h-1.5 w-1.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-sky-500" />
               </span>
               {bio.availabilityLabel}
             </div>

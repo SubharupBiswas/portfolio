@@ -227,7 +227,7 @@ export function ContactSection() {
                     type="text"
                     value={form.subject}
                     onChange={handleChange}
-                    placeholder="Project collaboration, freelance work..."
+                    placeholder="Engineering role, technical collaboration..."
                     className={inputClass('subject')}
                   />
                   {errors.subject && <p className="text-xs text-red-400 mt-1">{errors.subject}</p>}

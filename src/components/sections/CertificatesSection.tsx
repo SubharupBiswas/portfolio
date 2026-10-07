@@ -84,7 +84,7 @@ export function CertificatesSection({ limit }: CertificatesSectionProps) {
                   className={cn(
                     'px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all shrink-0 cursor-pointer',
                     activeCategory === cat
-                      ? 'bg-emerald-600 text-white shadow-xs'
+                      ? 'bg-sky-600 text-white shadow-xs'
                       : 'bg-zinc-900/60 text-zinc-400 hover:text-zinc-200 border border-zinc-800/80'
                   )}
                 >

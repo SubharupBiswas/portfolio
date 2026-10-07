@@ -51,7 +51,7 @@ export default function SkillsPage() {
                 </p>
                 <h1 className="section-title">Skills Matrix</h1>
                 <p className="section-subtitle">
-                  Core competencies across full-stack engineering, security auditing, digital forensics, and cloud infrastructure.
+                  Core competencies across full-stack engineering, distributed systems, network architectures, and cloud infrastructure.
                 </p>
               </div>
             </div>

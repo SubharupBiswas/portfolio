@@ -115,7 +115,7 @@ export function Header() {
               {/* Mobile Menu Toggle */}
               <button
                 onClick={() => setMobileOpen((o: boolean) => !o)}
-                className="md:hidden btn-ghost p-2"
+                className="md:hidden btn-ghost p-2 min-w-12 min-h-12 inline-flex items-center justify-center"
                 aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
               >
                 <AnimatePresence mode="wait">
@@ -166,7 +166,7 @@ export function Header() {
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
                     className={cn(
-                      'flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm font-medium transition-colors cursor-pointer',
+                      'flex items-center gap-2.5 px-4 py-3 min-h-12 rounded-xl text-sm font-medium transition-colors cursor-pointer',
                       isActive
                         ? 'text-sky-700 dark:text-sky-300 bg-sky-50 dark:bg-sky-500/15 border border-sky-200 dark:border-sky-500/20 font-bold'
                         : 'text-slate-700 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-zinc-100 hover:bg-slate-200/50 dark:hover:bg-zinc-800/60'

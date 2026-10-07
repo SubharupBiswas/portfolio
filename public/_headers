@@ -5,3 +5,18 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://challenges.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com https://static.cloudflareinsights.com; frame-src 'self' https://challenges.cloudflare.com https://www.credly.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://challenges.cloudflare.com https://api.resend.com https://www.google-analytics.com https://*.google-analytics.com https://static.cloudflareinsights.com;
+
+# Certificate documents: open inline in the browser, keep them out of search results.
+/certificates/pdf/*
+  Content-Disposition: inline
+  Cache-Control: public, max-age=31536000, immutable
+  X-Robots-Tag: noindex
+
+/certificates/png/*
+  Cache-Control: public, max-age=31536000, immutable
+  X-Robots-Tag: noindex
+
+# Resume
+/Profile.pdf
+  Content-Disposition: inline
+  Cache-Control: public, max-age=604800, must-revalidate

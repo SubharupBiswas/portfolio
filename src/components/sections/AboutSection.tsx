@@ -98,8 +98,8 @@ export function AboutSection() {
                 </div>
                 <div className="space-y-1">
                   <p><span className="text-purple-400">const</span> <span className="text-cyan-400">subharup</span> <span className="text-zinc-500">= {'{'}</span></p>
-                  <p className="pl-4"><span className="text-indigo-300">role</span><span className="text-zinc-500">:</span> <span className="text-emerald-400">&quot;Founder &amp; Lead Engineer at SB WebWorks&quot;</span><span className="text-zinc-500">,</span></p>
-                  <p className="pl-4"><span className="text-indigo-300">passion</span><span className="text-zinc-500">:</span> <span className="text-emerald-400">&quot;Secure, Scalable Systems&quot;</span><span className="text-zinc-500">,</span></p>
+                  <p className="pl-4"><span className="text-indigo-300">role</span><span className="text-zinc-500">:</span> <span className="text-sky-400">&quot;Full-Stack Software Engineer &amp; Systems Builder&quot;</span><span className="text-zinc-500">,</span></p>
+                  <p className="pl-4"><span className="text-indigo-300">passion</span><span className="text-zinc-500">:</span> <span className="text-sky-400">&quot;Secure, Scalable Systems&quot;</span><span className="text-zinc-500">,</span></p>
                   <p className="pl-4"><span className="text-indigo-300">available</span><span className="text-zinc-500">:</span> <span className="text-amber-400">true</span><span className="text-zinc-500">,</span></p>
                   <p><span className="text-zinc-500">{'}'}</span></p>
                 </div>
