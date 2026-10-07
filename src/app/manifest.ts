@@ -4,9 +4,9 @@ export const dynamic = 'force-static';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Subharup Biswas — Developer Portfolio',
-    short_name: 'Subharup',
-    description: 'Full-Stack Developer, Security Researcher, and Systems Engineer Portfolio',
+    name: 'Subharup Biswas | SB WebWorks',
+    short_name: 'SB WebWorks',
+    description: 'Founder & Lead Engineer at SB WebWorks — Full-Stack Developer & Security Researcher Portfolio',
     start_url: '/',
     display: 'standalone',
     background_color: '#09090b',

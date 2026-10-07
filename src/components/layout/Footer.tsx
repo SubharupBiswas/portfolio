@@ -38,7 +38,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-xs text-slate-500 dark:text-slate-400 text-center sm:text-left">
-              © {new Date().getFullYear()}{' '}Subharup Biswas. Built with Next.js 16 &amp; React 19.
+              © 2026 SB WebWorks · Built by Subharup Biswas
             </p>
             <p className="text-xs text-slate-500 dark:text-zinc-500 mt-1 text-center sm:text-left">
               Protected by Cloudflare Turnstile.{' '}

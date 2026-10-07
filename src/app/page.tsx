@@ -35,6 +35,7 @@ const SOCIAL_ICONS: Record<string, React.ReactNode> = {
 };
 
 const HERO_ROLES = [
+  'Founder @ SB WebWorks',
   'Full-Stack Engineer',
   'Security Researcher',
   'Systems Architect',
@@ -213,7 +214,7 @@ export default function Home() {
                   </div>
 
                   <p className="text-sm text-slate-600 dark:text-zinc-400 leading-relaxed my-5">
-                    Security researcher and full-stack engineer passionate about cloud architecture, digital forensics, and high-performance modern web apps.
+                    Founder &amp; Lead Engineer at SB WebWorks, specializing in secure cloud architecture, high-performance web applications, and digital forensics.
                   </p>
 
                   <div className="flex items-center justify-between pt-4 border-t border-slate-200 dark:border-zinc-800">

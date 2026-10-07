@@ -19,10 +19,14 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://subharup.com'),
-  title: 'Subharup Biswas — Full-Stack Developer & Security Researcher',
+  title: {
+    default: 'Subharup Biswas | SB WebWorks',
+    template: '%s | SB WebWorks',
+  },
   description:
-    'Portfolio of Subharup Biswas — Full-Stack Developer, Security Researcher, and Systems Engineer. Building secure, high-performance digital experiences with Next.js 16, Cloudflare Workers, and modern web architectures.',
+    'Founder & Lead Engineer at SB WebWorks. Full-Stack Developer, Security Researcher, and Systems Engineer building resilient web applications, secure digital architectures, and developer tools.',
   keywords: [
+    'SB WebWorks',
     'Subharup Biswas',
     'Subharup',
     'portfolio',
@@ -34,7 +38,7 @@ export const metadata: Metadata = {
     'cybersecurity',
     'systems engineer',
   ],
-  authors: [{ name: 'Subharup Biswas' }],
+  authors: [{ name: 'Subharup Biswas' }, { name: 'SB WebWorks' }],
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -46,17 +50,19 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'Subharup Biswas — Full-Stack Developer & Security Researcher',
-    description: 'Building secure, high-performance digital experiences with Next.js 16, Cloudflare Workers, and modern web architectures.',
+    title: 'Subharup Biswas | SB WebWorks',
+    description:
+      'Founder & Lead Engineer at SB WebWorks. Full-stack engineering, cybersecurity research, and resilient web applications built with Next.js and modern cloud architecture.',
     url: 'https://subharup.com',
-    siteName: 'Subharup.com',
+    siteName: 'SB WebWorks',
     type: 'website',
-    images: [{ url: '/favicon.png', width: 512, height: 512, alt: 'Subharup Biswas Emblem' }],
+    images: [{ url: '/favicon.png', width: 512, height: 512, alt: 'Subharup Biswas | SB WebWorks' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Subharup Biswas — Full-Stack Developer & Security Researcher',
-    description: 'Building secure, high-performance digital experiences with Next.js 16, Cloudflare Workers, and modern web architectures.',
+    title: 'Subharup Biswas | SB WebWorks',
+    description:
+      'Founder & Lead Engineer at SB WebWorks. Full-stack engineering, cybersecurity research, and resilient web applications.',
     images: ['/favicon.png'],
   },
 };
@@ -75,7 +81,12 @@ const jsonLd = {
   '@type': 'Person',
   name: 'Subharup Biswas',
   url: 'https://subharup.com',
-  jobTitle: 'Full-Stack Developer & Security Researcher',
+  jobTitle: 'Founder & Lead Engineer',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'SB WebWorks',
+    url: 'https://subharup.com',
+  },
   sameAs: [
     'https://github.com/SubharupBiswas',
     'https://linkedin.com/in/subharupbiswas',
@@ -83,6 +94,7 @@ const jsonLd = {
     'https://twitter.com/subharup',
   ],
   knowsAbout: [
+    'SB WebWorks',
     'Next.js',
     'React',
     'TypeScript',
