@@ -7,12 +7,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://subharup.com';
   const lastModified = new Date().toISOString();
 
-  const routes: MetadataRoute.Sitemap = ['', '/projects', '/certificates', '/skills', '/contact'].map(
+  const routes: MetadataRoute.Sitemap = ['', '/projects', '/certificates', '/skills', '/contact', '/resume'].map(
     (route) => ({
       url: `${baseUrl}${route}`,
       lastModified,
       changeFrequency: 'monthly' as const,
-      priority: route === '' ? 1.0 : 0.8,
+      priority: route === '' ? 1.0 : route === '/resume' ? 0.9 : 0.8,
     })
   );
 

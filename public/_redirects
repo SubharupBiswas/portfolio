@@ -1,0 +1,6 @@
+# Cloudflare Pages Redirects
+/resume       /Profile.pdf  302
+/resume.pdf   /Profile.pdf  302
+/Resume.pdf   /Profile.pdf  302
+/cv           /Profile.pdf  302
+/CV.pdf       /Profile.pdf  302

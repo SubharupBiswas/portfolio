@@ -106,6 +106,7 @@ export default function ContactPage() {
           <p><span className="text-amber-400 font-mono w-28 inline-block">skills</span> List core technical skills</p>
           <p><span className="text-amber-400 font-mono w-28 inline-block">projects</span> List featured projects</p>
           <p><span className="text-amber-400 font-mono w-28 inline-block">certs</span> List verified certifications</p>
+          <p><span className="text-amber-400 font-mono w-28 inline-block">resume</span> Open / download verified resume PDF</p>
           <p><span className="text-amber-400 font-mono w-28 inline-block">contact</span> Display contact email</p>
           <p><span className="text-amber-400 font-mono w-28 inline-block">clear</span> Clear terminal screen</p>
           <p><span className="text-amber-400 font-mono w-28 inline-block">whoami</span> Display user session info</p>
@@ -120,7 +121,7 @@ export default function ContactPage() {
             <span>Edge AI Response</span>
           </div>
           <p className="text-xs text-zinc-200 leading-relaxed">
-            Subharup Biswas is a Full-Stack Software Engineer &amp; Systems Builder specializing in Next.js 16, TypeScript, Cloudflare Edge architectures, and Distributed Systems. Regarding &quot;{query}&quot;: Subharup builds robust, high-performance web applications and maintains 11 verified accreditations across Cisco CCNA, Python, and AI systems.
+            Subharup Biswas is a Full-Stack Software Engineer &amp; Systems Builder specializing in Next.js 16, TypeScript, Cloudflare Edge architectures, and Distributed Systems. Regarding &quot;{query}&quot;: Subharup builds robust, high-performance web applications and maintains {certificates.length} verified accreditations across Cisco CCNA, Python, and AI systems.
           </p>
         </div>
       );
@@ -156,6 +157,26 @@ export default function ContactPage() {
           ))}
         </div>
       );
+    } else if (cmd === 'resume' || cmd === 'cv') {
+      output = (
+        <div className="space-y-1">
+          <p className="text-sky-300 font-semibold">Opening Subharup Biswas Resume...</p>
+          <p className="text-zinc-300 text-xs">
+            Direct Link:{' '}
+            <a
+              href="/Profile.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sky-400 underline font-mono"
+            >
+              /Profile.pdf (View / Download)
+            </a>
+          </p>
+        </div>
+      );
+      if (typeof window !== 'undefined') {
+        window.open('/Profile.pdf', '_blank');
+      }
     } else if (cmd === 'contact' || cmd === 'email') {
       output = <p className="text-sky-400 font-mono">Email: {bio.email}</p>;
     } else if (cmd === 'whoami') {

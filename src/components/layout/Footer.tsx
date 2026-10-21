@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ArrowUp, Award, Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import { ArrowUp, Award, FileText, Github, Linkedin, Mail, Twitter } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePortfolio } from '@/context/PortfolioContext';
@@ -63,16 +63,27 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Center: Availability status */}
-          {bio.availableForWork && (
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-50 dark:bg-sky-500/10 border border-sky-200 dark:border-sky-500/20 text-sky-700 dark:text-sky-300 text-xs font-semibold">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-500" />
-              </span>
-              <span>{bio.availabilityLabel}</span>
-            </div>
-          )}
+          {/* Center: Availability status & Resume */}
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            {bio.availableForWork && (
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-50 dark:bg-sky-500/10 border border-sky-200 dark:border-sky-500/20 text-sky-700 dark:text-sky-300 text-xs font-semibold">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-500" />
+                </span>
+                <span>{bio.availabilityLabel}</span>
+              </div>
+            )}
+            <a
+              href="/Profile.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-zinc-800 text-slate-700 dark:text-zinc-300 hover:text-sky-600 dark:hover:text-sky-400 text-xs font-medium border border-slate-200 dark:border-zinc-700 transition-colors"
+            >
+              <FileText className="w-3.5 h-3.5 text-sky-600 dark:text-sky-400" />
+              <span>Resume (PDF)</span>
+            </a>
+          </div>
 
           {/* Right: Social links + back-to-top */}
           <div className="flex items-center gap-2">

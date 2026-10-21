@@ -390,11 +390,21 @@ export default function Home() {
                   <p className="text-base sm:text-lg text-slate-300 dark:text-zinc-400 max-w-xl mx-auto">
                     I&apos;m actively seeking software engineering internships, technical collaborations, and full-stack developer roles. Whether you have an engineering opportunity or just want to discuss distributed systems, feel free to reach out.
                   </p>
-                  <div className="pt-4">
+                  <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
                     <Link href="/contact" className="btn-primary text-base px-8 py-3.5 shadow-lg shadow-sky-500/20">
                       Get In Touch
                       <ArrowRight className="w-4 h-4" />
                     </Link>
+                    <a
+                      href={bio.resumeUrl || '/Profile.pdf'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View Resume PDF"
+                      className="btn-secondary text-base px-6 py-3.5 flex items-center gap-2"
+                    >
+                      <FileText className="w-4 h-4 text-sky-600 dark:text-sky-400" />
+                      <span>View Resume</span>
+                    </a>
                   </div>
                 </div>
               </div>

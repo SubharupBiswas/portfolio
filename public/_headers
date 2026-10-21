@@ -20,3 +20,11 @@
 /Profile.pdf
   Content-Disposition: inline
   Cache-Control: public, max-age=604800, must-revalidate
+
+/Resume.pdf
+  Content-Disposition: inline
+  Cache-Control: public, max-age=604800, must-revalidate
+
+/resume.pdf
+  Content-Disposition: inline
+  Cache-Control: public, max-age=604800, must-revalidate

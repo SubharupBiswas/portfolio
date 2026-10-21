@@ -38,8 +38,8 @@ A high-performance, edge-rendered personal engineering portfolio and credentials
 | Feature | Description |
 | :--- | :--- |
 | **🚀 Edge Prerendering** | 100% static output optimized for Cloudflare Pages edge network delivery. |
-| **💎 Light Blue / Sapphire Theme** | High-contrast WCAG-compliant design system with automatic light/dark mode adaptation. |
-| **📜 Credentials Vault** | 11 verified accreditations from Cisco, IBM, Skill India, and Coursera with direct Credly links. |
+| **💎 Sky Blue Design System** | High-contrast WCAG-compliant design system with automatic light/dark mode adaptation. |
+| **📜 Credentials Vault** | 14 verified accreditations from Cisco, IBM, Skill India, and Coursera with direct Credly links. |
 | **🔍 Interactive Document Viewer** | Instant modal previews for PDF and PNG certificates without leaving the page. |
 | **💻 Technical Case Studies** | Comprehensive architecture breakdowns for AI engines, subnet tools, and telemetry systems. |
 | **📱 Mobile Protection** | Fluid responsive typography, touch-friendly 44px targets, and overflow wrap protection. |
@@ -59,6 +59,7 @@ A high-performance, edge-rendered personal engineering portfolio and credentials
 | [`/projects`](https://subharup.com/projects) | Showcase of engineering projects with category filters and search |
 | [`/projects/[id]`](https://subharup.com/projects/rupeecheck-ai) | In-depth case studies with problem statements, architecture, and metrics |
 | [`/certificates`](https://subharup.com/certificates) | Verified credentials vault with modal document previews and Credly links |
+| [`/resume`](https://subharup.com/resume) | Dedicated resume view & PDF redirect (`/Profile.pdf`) |
 | [`/contact`](https://subharup.com/contact) | Interactive terminal emulator and direct communication channels |
 
 </div>

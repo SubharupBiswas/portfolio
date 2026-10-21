@@ -1,5 +1,4 @@
 import type { MetadataRoute } from 'next';
-import portfolioData from '@/data/portfolio.json';
 
 export const dynamic = 'force-static';
 

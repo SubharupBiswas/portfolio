@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import {
   Award,
   Code2,
+  FileText,
   FolderGit2,
   Github,
   Home,
@@ -109,6 +110,18 @@ export function Header() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, delay: 0.2 }}
             >
+              {/* Desktop Resume Button */}
+              <a
+                href="/Profile.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View Resume (PDF)"
+                className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-sky-50 dark:bg-sky-500/10 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-500/25 hover:bg-sky-100 dark:hover:bg-sky-500/20 transition-all cursor-pointer shadow-xs"
+              >
+                <FileText className="w-3.5 h-3.5 text-sky-600 dark:text-sky-400" />
+                <span>Resume</span>
+              </a>
+
               {/* Theme Toggle Button */}
               <ThemeToggle />
 
@@ -177,6 +190,16 @@ export function Header() {
                   </Link>
                 );
               })}
+              <a
+                href="/Profile.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center gap-2.5 px-4 py-3 min-h-12 rounded-xl text-sm font-semibold text-sky-700 dark:text-sky-300 bg-sky-50 dark:bg-sky-500/15 border border-sky-200 dark:border-sky-500/20 transition-colors mt-1"
+              >
+                <FileText className="w-4 h-4 text-sky-600 dark:text-sky-400" />
+                <span>View Resume (PDF)</span>
+              </a>
             </div>
           </motion.div>
         )}
